@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.VerticalStackLayoutDemo"
+             Title="VerticalStackLayoutDemo">
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+            <Label Text=" Demo Label" HorizontalOptions="FillAndExpand" BackgroundColor="LightBlue" TextColor="DarkBlue"></Label>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

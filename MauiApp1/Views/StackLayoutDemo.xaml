@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Pages.StackLayoutDemo"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Stack Layout Demo"
+    BackgroundColor="White">
+    <ScrollView>
+        <StackLayout
+            Padding="20"
+            Orientation="Vertical"
+            Spacing="10"
+            VerticalOptions="End">
+            <Label
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Text=".NET MAUI Layout"
+                TextColor="Red" />
+            <Button
+                x:Name="verticalStackLayoutButton"
+                Clicked="VerticalStackLayoutButton_Clicked"
+                Text="Vertical Stack Layout" />
+            <Button
+                x:Name="horizontalStackLayoutButton"
+                Clicked="HorizontalStackLayoutButton_Clicked"
+                Text="Horizontal Stack Layout" />
+            <Button
+                x:Name="gridlayoutDemo"
+                Clicked="gridlayoutDemo_Clicked"
+                Text="Grid layout " />
+            <Button
+                x:Name="absoluteLayoutDemo"
+                Clicked="absoluteLayoutDemo_Clicked"
+                Text="Absolute Layout" />
+            <Button
+                x:Name="flexLayoutDemo"
+                Clicked="flexLayoutDemo_Clicked"
+                Text="Flex Layout" />
+            <Button
+                x:Name="bindableLayoutDemo"
+                Clicked="bindableLayoutDemo_Clicked"
+                Text="Bindable Layout" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Pages.AbsoluteLayoutDemo"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Absolute Layout Demo"
+    BackgroundColor="white">
+    <AbsoluteLayout>
+        <Button AbsoluteLayout.LayoutBounds="10, 20, 200, 50" Text="Fixed " />
+        <!--  .2 means 20%, layout flag will allow to give the dimensions in percentage  -->
+        <Button
+            AbsoluteLayout.LayoutBounds="10, 90, 300, .2"
+            AbsoluteLayout.LayoutFlags="HeightProportional"
+            Text="Demo Button 2 " />
+        <!--  layout flags will have their dimension changed acc to the view port  -->
+        <Button
+            AbsoluteLayout.LayoutBounds="10, 90, .4, 50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            Text="Demo Button 2 " />
+
+        <!--  size proportion can make you add the percentage to both the height and the width  -->
+        <Button
+            AbsoluteLayout.LayoutBounds="10, 300, .4, .2"
+            AbsoluteLayout.LayoutFlags="SizeProportional"
+            Text="Demo Button 2 " />
+
+        <!--  to change for the x axis  -->
+        <Button
+            AbsoluteLayout.LayoutBounds=".1, 300, .4, .2"
+            AbsoluteLayout.LayoutFlags="XProportional"
+            Text="Demo Button 2 " />
+
+        <!--  to change for both the x and y position  -->
+        <Button
+            AbsoluteLayout.LayoutBounds=".2, .7, 30, 20"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="red"
+            Text="Demo Button hello " />
+
+        <Button
+            AbsoluteLayout.LayoutBounds=".2, .7, .4, .2"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="black"
+            Text="Demo Button hello " />
+    </AbsoluteLayout>
+</ContentPage>

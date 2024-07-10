@@ -9,6 +9,7 @@ namespace MauiApp1.Models.ViewModels
 {
     partial class PersonViewModel2 : ObservableObject
     {
+        //this will observe the changes 
         [ObservableProperty]
         private string? name;
 
