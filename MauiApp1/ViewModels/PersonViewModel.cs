@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MauiApp1.Models.ViewModels
+namespace MauiApp1.ViewModels
 {
     class PersonViewModel : INotifyPropertyChanged
     {
