@@ -1,71 +1,26 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MauiApp1.Models;
 
 namespace MauiApp1.ViewModels
 {
-    class PersonViewModel : INotifyPropertyChanged
+    class PersonViewModel
     {
-        private string? name;
-        public string? Name
+        public ObservableCollection<Person> People {get; set;}
+
+        public PersonViewModel()
         {
-            get { return name; }
-            set
+            People = new ObservableCollection<Person>
             {
-                if (name != value)
-                {
-                    name = value;
-                    NotifyPropertyChanged(nameof(Name));
-                }
-            }
-        }
-
-        private int? age;
-        public int? Age
-        {
-            get { return age; }
-            set
-            {
-                if (age != value)
-                {
-                    age = value;
-                    NotifyPropertyChanged(nameof(Age));
-                }
-            }
-        }
-
-        private string? email;
-        public string? Email
-        {
-            get { return email; }
-            set
-            {
-                if (email != value)
-                {
-                    email = value;
-                    NotifyPropertyChanged(nameof(Email));
-                }
-            }
-        }
-
-        private bool isTrainee;
-        public bool IsTrainee
-        {
-            get { return isTrainee; }
-            set
-            {
-                if (isTrainee != value)
-                {
-                    isTrainee = value;
-                    NotifyPropertyChanged(nameof(IsTrainee));
-                }
-            }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void NotifyPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+               new Person { Name = "Prekshya Dali", Age = 20 },
+               new Person {Name = "Bitisha Maharjan", Age = 19},
+               new Person {Name = "Suyan HeroHeralal", Age = 78}
+            };
+            
         }
     }
 }

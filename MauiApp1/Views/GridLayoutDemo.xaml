@@ -65,8 +65,6 @@
             HorizontalOptions="FillAndExpand"
             Text="Demo"
             VerticalOptions="FillAndExpand" />
-
-
         <Label
             Grid.Row="1"
             Grid.Column="0"
@@ -126,13 +124,6 @@
             HorizontalOptions="FillAndExpand"
             Text="Demo"
             VerticalOptions="FillAndExpand" />
-        <!--<Label
-            Grid.Row="2"
-            Grid.Column="2"
-            BackgroundColor="LightBlue"
-            HorizontalOptions="FillAndExpand"
-            Text="Demo"
-            VerticalOptions="FillAndExpand" />-->
         <Label
             Grid.Row="2"
             Grid.Column="3"
@@ -163,13 +154,6 @@
             HorizontalOptions="FillAndExpand"
             Text="Demo"
             VerticalOptions="FillAndExpand" />
-        <!--<Label
-            Grid.Row="3"
-            Grid.Column="1"
-            BackgroundColor="LightBlue"
-            HorizontalOptions="FillAndExpand"
-            Text="Demo"
-            VerticalOptions="FillAndExpand" />-->
         <Label
             Grid.Row="3"
             Grid.Column="2"
@@ -198,8 +182,6 @@
             HorizontalOptions="FillAndExpand"
             Text="Demo"
             VerticalOptions="FillAndExpand" />
-
-
         <Label
             Grid.Row="4"
             Grid.Column="0"
@@ -242,9 +224,6 @@
             HorizontalOptions="FillAndExpand"
             Text="Demo"
             VerticalOptions="FillAndExpand" />
-
-
     </Grid>
-
-
 </ContentPage>
+    
