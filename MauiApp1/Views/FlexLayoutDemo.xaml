@@ -22,9 +22,6 @@
             <VerticalStackLayout BackgroundColor="Aqua" FlexLayout.Grow="1" />
             <VerticalStackLayout BackgroundColor="MediumPurple" FlexLayout.Basis="50" />
         </FlexLayout>
-
-
-
         <Label
             Padding="10"
             BackgroundColor="DarkBlue"
@@ -33,7 +30,6 @@
             HorizontalTextAlignment="Center"
             Text="Footer"
             TextColor="white" />
-
     </FlexLayout>
-
 </ContentPage>
+    

@@ -17,11 +17,11 @@
                 Text=".NET MAUI Layout"
                 TextColor="Red" />
             <Button
-                x:Name="verticalStackLayoutButton"
+                x:Name="VerticalStackLayoutButton"
                 Clicked="VerticalStackLayoutButton_Clicked"
                 Text="Vertical Stack Layout" />
             <Button
-                x:Name="horizontalStackLayoutButton"
+                x:Name="HorizontalStackLayoutButton"
                 Clicked="HorizontalStackLayoutButton_Clicked"
                 Text="Horizontal Stack Layout" />
             <Button

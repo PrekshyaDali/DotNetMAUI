@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MauiApp1.Models
 {
-    class Persons
+    public class Person
     {
+        public string? Name { get; set; }
+        public int Age { get; set; }
     }
 }
