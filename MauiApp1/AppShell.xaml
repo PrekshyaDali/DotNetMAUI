@@ -67,7 +67,4 @@
             ContentTemplate="{DataTemplate pages:StackLayoutDemo}"
             Route="StackLayoutDemo" />
     </TabBar>
-
-
-
 </Shell>

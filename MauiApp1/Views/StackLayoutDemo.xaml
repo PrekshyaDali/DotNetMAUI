@@ -25,19 +25,19 @@
                 Clicked="HorizontalStackLayoutButton_Clicked"
                 Text="Horizontal Stack Layout" />
             <Button
-                x:Name="gridlayoutDemo"
+                x:Name="GridlayoutDemo"
                 Clicked="gridlayoutDemo_Clicked"
                 Text="Grid layout " />
             <Button
-                x:Name="absoluteLayoutDemo"
+                x:Name="AbsoluteLayoutDemo"
                 Clicked="absoluteLayoutDemo_Clicked"
                 Text="Absolute Layout" />
             <Button
-                x:Name="flexLayoutDemo"
+                x:Name="FlexLayoutDemo"
                 Clicked="flexLayoutDemo_Clicked"
                 Text="Flex Layout" />
             <Button
-                x:Name="bindableLayoutDemo"
+                x:Name="BindableLayoutDemo"
                 Clicked="bindableLayoutDemo_Clicked"
                 Text="Bindable Layout" />
         </StackLayout>
