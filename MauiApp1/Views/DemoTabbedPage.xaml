@@ -13,7 +13,7 @@
             VerticalOptions="CenterAndExpand" />
     </ContentPage>
 
-    <!--<NavigationPage Title="About">
+    <NavigationPage Title="About">
         <x:Arguments>
             <ContentPage Title="About">
                 <Label Text="This is about content page"
@@ -22,7 +22,7 @@
                 <pages:StackLayoutDemo />
             </ContentPage>
         </x:Arguments>
-    </NavigationPage>-->
+    </NavigationPage>
 
     <ContentPage Title="Contact us">
         <Label
