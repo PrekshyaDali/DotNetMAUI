@@ -1,9 +1,15 @@
-namespace MauiApp1.Pages;
+using Microsoft.Maui.Controls;
+using System;
 
-public partial class FlexLayoutDemo : ContentPage
+namespace MauiApp1.Pages
 {
-	public FlexLayoutDemo()
-	{
-		InitializeComponent();
-	}
+    public partial class FlexLayoutDemo : ContentPage
+    {
+        public FlexLayoutDemo()
+        {
+            InitializeComponent();
+        }
+
+        
+    }
 }

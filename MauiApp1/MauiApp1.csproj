@@ -57,10 +57,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Epilogue.ttf" />
 	  <None Remove="Resources\Images\about.png" />
 	  <None Remove="Resources\Images\bajralogo.png" />
+	  <None Remove="Resources\Images\Fairies\cindrella.jpg" />
+	  <None Remove="Resources\Images\Fairies\rapunzel.jpg" />
+	  <None Remove="Resources\Images\Fairies\snowwhite.jpg" />
+	  <None Remove="Resources\Images\Fairies\tinkerbell.jpg" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\logout.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Fairies\cindrella.jpg" />
+	  <MauiImage Include="Resources\Images\Fairies\rapunzel.jpg" />
+	  <MauiImage Include="Resources\Images\Fairies\snowwhite.jpg" />
+	  <MauiImage Include="Resources\Images\Fairies\tinkerbell.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +93,9 @@
 	  <MauiXaml Update="Views\BindableLayoutDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\DemoTabbedPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\FlexLayoutDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -91,6 +106,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\StackLayoutDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UIPracticePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\VerticalStackLayoutDemo.xaml">

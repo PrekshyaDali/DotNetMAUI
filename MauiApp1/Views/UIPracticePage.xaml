@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.UIPracticePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="UIPracticePage">
+
+    <Grid BackgroundColor="#0D0118" RowDefinitions=".05*, .1*, .45*, .05*, .05*, .3*">
+        <Label
+            Grid.Row="0"
+            FontSize="16"
+            HorizontalOptions="Center"
+            Text="Fairy Tales"
+            TextColor="white"
+            VerticalOptions="Center" />
+
+        <Grid Grid.Row="1" Margin="25,10,25,10">
+            <RoundRectangle
+                CornerRadius="25"
+                Fill="#311B45"
+                HeightRequest="40" />
+            <SearchBar
+                Grid.Column="0"
+                CancelButtonColor="white"
+                Placeholder="Search by name"
+                PlaceholderColor="#AC9DB9"
+                TextColor="white"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <!--  peakareainsets allows us to see another part of another elements  -->
+        <CarouselView
+            Grid.Row="2"
+            IndicatorView="IndicatorView"
+            ItemsSource="{Binding FairyTales1}"
+            PeekAreaInsets="30">
+            <!--  mandatory single will allow the user not scroll quickly  -->
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="0"
+                    Orientation="Horizontal"
+                    SnapPointsAlignment="Center"
+                    SnapPointsType="MandatorySingle" />
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Border
+                            Grid.RowSpan="3"
+                            BackgroundColor="#311B45"
+                            Stroke="#6E557C"
+                            StrokeShape="RoundRectangle 30,30,30,30"
+                            StrokeThickness="2"
+                            WidthRequest="300">
+                            <Grid RowDefinitions=".15*, .6*, .2*">
+                                <Image
+                                    Grid.RowSpan="3"
+                                    Aspect="AspectFill"
+                                    Source="{Binding Image}" />
+                                <RoundRectangle
+                                    Grid.RowSpan="3"
+                                    CornerRadius="30"
+                                    HeightRequest="320"
+                                    Opacity=".7"
+                                    WidthRequest="300">
+                                    <RoundRectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="Transparent" />
+                                            <GradientStop Offset="1" Color="#030005" />
+                                        </LinearGradientBrush>
+                                    </RoundRectangle.Fill>
+
+                                </RoundRectangle>
+                                <VerticalStackLayout Grid.Row="2" Margin="20,0,0,0">
+                                    <Label Text="{Binding ReadTime, StringFormat='Read Time: {0:%m} mins'}" TextColor="White" />
+                                    <Label
+                                        FontSize="Large"
+                                        Text="{Binding Name}"
+                                        TextColor="white" />
+                                </VerticalStackLayout>
+                                <Label
+                                    Margin="0,20,20,0"
+                                    FontFamily="Icons"
+                                    FontSize="25"
+                                    HorizontalOptions="End"
+                                    Text="&#xF097;"
+                                    TextColor="white" />
+                            </Grid>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="#C283FD"
+                                    Opacity=".7"
+                                    Radius="100"
+                                    Offset="0,0" />
+                            </Border.Shadow>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView
+            x:Name="IndicatorView"
+            Grid.Row="3"
+            HorizontalOptions="Center"
+            IndicatorColor="#616161"
+            SelectedIndicatorColor="white"
+            VerticalOptions="Center" />
+
+        <Label
+            Grid.Row="4"
+            Margin="25,10,25,10"
+            FontSize="16"
+            Text="Recommended For you"
+            TextColor="White"
+            VerticalOptions="Center" />
+        <CollectionView Grid.Row="5" ItemsSource="{Binding FairyTales2}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="25" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HeightRequest="200" WidthRequest="200">
+                        <Border
+                            HeightRequest="200"
+                            HorizontalOptions="Center"
+                            Stroke="#6E557C"
+                            StrokeShape="RoundRectangle 20, 20, 20, 20"
+                            StrokeThickness="2"
+                            WidthRequest="200">
+                            <Image Aspect="AspectFill" Source="{Binding Image}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

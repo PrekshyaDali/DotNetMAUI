@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="MauiApp1.Views.DemoTabbedPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiApp1.Pages"
+    Title="DemoTabbedPage">
+
+    <ContentPage Title="Home">
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Text="This is home content page"
+            VerticalOptions="CenterAndExpand" />
+    </ContentPage>
+
+    <NavigationPage Title="About">
+        <x:Arguments>
+            <ContentPage Title="About">
+                <Label Text="This is about content page"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+                <pages:StackLayoutDemo />
+            </ContentPage>
+        </x:Arguments>
+    </NavigationPage>
+
+    <ContentPage Title="Contact us">
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Text="This is contact content page"
+            VerticalOptions="CenterAndExpand" />
+    </ContentPage>
+</TabbedPage>

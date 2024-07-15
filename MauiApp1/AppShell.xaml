@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1"
     xmlns:pages="clr-namespace:MauiApp1.Pages"
+    xmlns:pagesOne ="clr-namespace:MauiApp1.Views"
     Title="MauiApp1">
 
     <!--  Flyout Header  -->
@@ -45,6 +46,9 @@
     <FlyoutItem Title="About" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pages:StackLayoutDemo}" Route="StackLayoutDemo" />
     </FlyoutItem>
+    <FlyoutItem Title="UI Practice Page" Icon="about.png" >
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:UIPracticePage}" Route="UIPracticepage" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>
@@ -67,7 +71,4 @@
             ContentTemplate="{DataTemplate pages:StackLayoutDemo}"
             Route="StackLayoutDemo" />
     </TabBar>
-
-
-
 </Shell>

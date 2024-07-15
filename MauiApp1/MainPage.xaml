@@ -5,8 +5,6 @@
 
     <StackLayout Padding="50"  HorizontalOptions="Center" >
         <Image Margin="50" Source="bajralogo.png"></Image>
-        <Label FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Red" LineHeight="1.5"> Welcome to ShowCase of Prekshya's MAUI Practise</Label>
+        <Label FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Red" LineHeight="1.5">Welcome to ShowCase of Prekshya's MAUI Practise</Label>
     </StackLayout>
-    
-
 </ContentPage>
