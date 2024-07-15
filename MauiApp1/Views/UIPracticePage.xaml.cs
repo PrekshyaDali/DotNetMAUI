@@ -9,5 +9,4 @@ public partial class UIPracticePage : ContentPage
 		BindingContext = new FairyTaleViewModel();
 	
 	}
-
 }

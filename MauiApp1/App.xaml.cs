@@ -1,6 +1,4 @@
 ﻿using MauiApp1.Views;
-//using MauiApp1.Pages;
-
 
 namespace MauiApp1
 {
@@ -10,7 +8,7 @@ namespace MauiApp1
         {
             InitializeComponent();
             MainPage = new AppShell();
-            //MainPage = new DemoTabbedPage();
+         
         }
     }
 }
