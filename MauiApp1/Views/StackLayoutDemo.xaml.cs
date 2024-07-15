@@ -1,4 +1,4 @@
-
+using MauiApp1.Views;
 namespace MauiApp1.Pages
 {
     public partial class StackLayoutDemo : ContentPage

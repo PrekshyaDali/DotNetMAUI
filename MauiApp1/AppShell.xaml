@@ -43,11 +43,14 @@
     <FlyoutItem Title="Home" Icon="home.png">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
     </FlyoutItem>
-    <FlyoutItem Title="About" Icon="about.png">
+    <FlyoutItem Title="Layout Demo Page" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pages:StackLayoutDemo}" Route="StackLayoutDemo" />
     </FlyoutItem>
     <FlyoutItem Title="UI Practice Page" Icon="about.png" >
         <ShellContent ContentTemplate="{DataTemplate pagesOne:UIPracticePage}" Route="UIPracticepage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Present Data Demo Page" Icon="about.png" >
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:PresentDataDemoPage}" Route="PresentDataDemoPage" />
     </FlyoutItem>
 
     <!--  Tab Bar  -->
@@ -67,7 +70,7 @@
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
         <ShellContent
-            Title="About Us"
+            Title="Stack Layout Demo"
             ContentTemplate="{DataTemplate pages:StackLayoutDemo}"
             Route="StackLayoutDemo" />
     </TabBar>
