@@ -88,6 +88,8 @@
                     <Image Source="Fairies/cindrella.jpg" />
                 </StackLayout>
 
+
+                <!--  using a checkbox normally with the event handler  -->
             </Frame>
             <Label
                 Margin="10"
@@ -99,7 +101,7 @@
                 Color="green" />
             <Label x:Name="StatusLabel" />
 
-            <!--  using data binding for the checked box  -->
+            <!--  using data binding for the checked box and observable property  -->
             <StackLayout Padding="10">
                 <Label
                     FontSize="Large"
@@ -107,21 +109,37 @@
                     Text="CheckBox Example" />
 
                 <CheckBox IsChecked="{Binding IsChecked}" />
-
                 <Label
                     FontSize="Medium"
                     HorizontalOptions="Center"
                     Text="{Binding Status}" />
             </StackLayout>
 
+            <!--  using a datepicker  -->
             <StackLayout Padding="10">
                 <Label FontSize="Large" Text="Select a date:" />
-                <DatePicker Date="{Binding SelectedDate}" />
-                <Label BackgroundColor="blue" TextColor='white' FontSize="Medium" Text="{Binding SelectedDate, StringFormat='Selected Date: {0:D}'}" />
+                <DatePicker
+                    Date="{Binding SelectedDate}"
+                    MaximumDate="10/10/2024"
+                    MinimumDate="01/01/2024" />
+                <Label
+                    BackgroundColor="blue"
+                    FontSize="Medium"
+                    Text="{Binding SelectedDate, StringFormat='Selected Date: {0:D}'}"
+                    TextColor="white" />
+
             </StackLayout>
+            <!--  using a slider  -->
+            <Frame BorderColor="Pink">
+                <StackLayout>
+                    <Label x:Name="rotatingLabel" Text="Select a value:" />
+                    <Slider
+                        Maximum="360"
+                        Minimum="0"
+                        ValueChanged="Slider_ValueChanged" />
+                    <Label x:Name="displayLabel" Text="(uninitialized)" />
+                </StackLayout>
+            </Frame>
         </StackLayout>
-
-
-
     </ScrollView>
 </ContentPage>

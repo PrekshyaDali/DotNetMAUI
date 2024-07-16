@@ -21,4 +21,12 @@ public partial class PresentDataDemoPage : ContentPage
 
 
     }
+
+    private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+		double value = (double)e.NewValue;
+        rotatingLabel.Rotation = value;
+		displayLabel.Text = String.Format("The slider Value is {0)", value);
+
+    }
 }

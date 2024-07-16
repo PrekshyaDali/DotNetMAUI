@@ -19,20 +19,27 @@ namespace MauiApp1.ViewModels
         //using the observableproperty will automatically have its field name in capital although declared as lowecase
         [ObservableProperty]
         private DateTime selectedDate;
-        
 
-        
+        //[ObservableProperty]
+        //private double? sliderValue;
+
         public PresentDataDemoPageViewModel()
         {
             isChecked = false;
             Status = "Not checked";
             SelectedDate = DateTime.Now;
+            //sliderValue = 50.0;
         }
 
         partial void OnIsCheckedChanged(bool value) {
             Status = value ? "Checked" : "Not Checked";
         }
-       
+        //public double SliderValue
+        //{
+        //    get => sliderValue;
+        //    set => SetProperty(ref sliderValue, value);
+        //}
+
 
     }
 }
