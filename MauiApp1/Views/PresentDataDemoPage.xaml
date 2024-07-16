@@ -132,24 +132,24 @@
             <!--  using a slider  -->
             <Frame BorderColor="Pink">
                 <StackLayout>
-                    <Label x:Name="rotatingLabel" Text="Select a value:" />
+                    <Label x:Name="RotatingLabel" Text="Select a value:" />
                     <Slider
                         Maximum="360"
                         Minimum="0"
                         ValueChanged="Slider_ValueChanged" />
-                    <Label x:Name="displayLabel" Text="(uninitialized)" />
+                    <Label x:Name="DisplayLabel" Text="(uninitialized)" />
                 </StackLayout>
             </Frame>
 
             <!--  using a stepper  -->
             <Frame BorderColor="Pink">
                 <StackLayout>
-                    <Label x:Name="_rotatingLabel" Text="Select a value:" />
+                    <Label x:Name="RotatingLabels" Text="Select a value:" />
                     <Stepper
                         Increment="30"
                         Maximum="360"
                         ValueChanged="Stepper_ValueChanged" />
-                    <Label x:Name="_displayLabel" Text="(uninitialized)" />
+                    <Label x:Name="DisplayLabels" Text="(uninitialized)" />
                 </StackLayout>
             </Frame>
         </StackLayout>

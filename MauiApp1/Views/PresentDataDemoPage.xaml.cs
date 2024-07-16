@@ -25,8 +25,8 @@ public partial class PresentDataDemoPage : ContentPage
     private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
 		double value = (double)e.NewValue;
-        rotatingLabel.Rotation = value;
-		displayLabel.Text = String.Format("The slider Value is {0)", value);
+        RotatingLabel.Rotation = value;
+		DisplayLabel.Text = String.Format("The slider Value is {0)", value);
 
     }
 
@@ -34,7 +34,7 @@ public partial class PresentDataDemoPage : ContentPage
     private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
     {
 		double value = e.NewValue;
-		_rotatingLabel.Rotation = value;
-		_displayLabel.Text = string.Format("The Stepper value is {0}", value);
+		RotatingLabels.Rotation = value;
+		DisplayLabels.Text = string.Format("The Stepper value is {0}", value);
     }
 }
