@@ -140,6 +140,18 @@
                     <Label x:Name="displayLabel" Text="(uninitialized)" />
                 </StackLayout>
             </Frame>
+
+            <!--  using a stepper  -->
+            <Frame BorderColor="Pink">
+                <StackLayout>
+                    <Label x:Name="_rotatingLabel" Text="Select a value:" />
+                    <Stepper
+                        Increment="30"
+                        Maximum="360"
+                        ValueChanged="Stepper_ValueChanged" />
+                    <Label x:Name="_displayLabel" Text="(uninitialized)" />
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ScrollView>
 </ContentPage>
