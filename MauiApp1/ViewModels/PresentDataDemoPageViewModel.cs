@@ -25,7 +25,6 @@ namespace MauiApp1.ViewModels
             isChecked = false;
             Status = "Not checked";
             SelectedDate = DateTime.Now;
-            //sliderValue = 50.0;
         }
 
         partial void OnIsCheckedChanged(bool value) {
