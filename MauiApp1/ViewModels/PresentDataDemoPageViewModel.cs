@@ -20,9 +20,6 @@ namespace MauiApp1.ViewModels
         [ObservableProperty]
         private DateTime selectedDate;
 
-        //[ObservableProperty]
-        //private double? sliderValue;
-
         public PresentDataDemoPageViewModel()
         {
             isChecked = false;
@@ -34,12 +31,6 @@ namespace MauiApp1.ViewModels
         partial void OnIsCheckedChanged(bool value) {
             Status = value ? "Checked" : "Not Checked";
         }
-        //public double SliderValue
-        //{
-        //    get => sliderValue;
-        //    set => SetProperty(ref sliderValue, value);
-        //}
-
-
+   
     }
 }
