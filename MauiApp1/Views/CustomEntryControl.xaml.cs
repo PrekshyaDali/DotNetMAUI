@@ -1,9 +1,13 @@
-namespace MauiApp1.Views;
+using MauiApp1.Models;
+using Microsoft.Maui.Controls;
 
-public partial class CustomEntryControl : ContentPage
+namespace MauiApp1.Views
 {
-	public CustomEntryControl()
-	{
-		InitializeComponent();
-	}
+    public partial class CustomEntryControl : ContentPage
+    {
+        public CustomEntryControl()
+        {
+            InitializeComponent();
+        }
+    }
 }
