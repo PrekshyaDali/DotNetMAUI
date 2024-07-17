@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.PresentDataDemoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+    Title="PresentDataDemoPage">
+    <ContentPage.BindingContext>
+        <vm:PresentDataDemoPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Border
+                BackgroundColor="Aqua"
+                HeightRequest="200"
+                HorizontalOptions="Start"
+                Stroke="red"
+                StrokeThickness="2"
+                VerticalOptions="Start"
+                WidthRequest="200">
+                <!--  the offset will move the shadow 10 units to the right and 10 units down from the element  -->
+                <Border.Shadow>
+                    <Shadow
+                        Brush="DeepPink"
+                        Opacity="0.7"
+                        Radius="15"
+                        Offset="10,10" />
+                </Border.Shadow>
+                <StackLayout>
+                    <Label FontSize="Large" Text="Complex Border" />
+                    <Label Text="This border has background color, stroke, rounded corners, and shadow." />
+                </StackLayout>
+            </Border>
+            <!--  scale will scale the size of hte box relative to its original dimensions  -->
+            <BoxView
+                Margin="0,20,0,0"
+                HeightRequest="100"
+                HorizontalOptions="Start"
+                Opacity="0.2"
+                Scale="1.5"
+                TranslationX="20"
+                TranslationY="10"
+                WidthRequest="100"
+                Color="LightBlue" />
+
+            <Frame
+                Padding="20"
+                BackgroundColor="LightGray"
+                BorderColor="DarkGray"
+                CornerRadius="10"
+                HasShadow="True">
+                <StackLayout>
+                    <Label
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        Text="This is a Frame" />
+                    <Label Text="Frames can contain other elements and provide visual emphasis." />
+                </StackLayout>
+            </Frame>
+
+            <Border
+                Padding="16,8"
+                Background="#2B0B98"
+                HorizontalOptions="Center"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                StrokeThickness="4">
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Offset="0.1" Color="Orange" />
+                        <GradientStop Offset="1.0" Color="Brown" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text=".NET MAUI"
+                    TextColor="White" />
+            </Border>
+
+            <Frame
+                Margin="50"
+                Padding="5"
+                BackgroundColor="pink"
+                CornerRadius="10">
+                <StackLayout>
+                    <Label Text="this is a frame example" />
+                    <Image Source="Fairies/cindrella.jpg" />
+                </StackLayout>
+
+
+                <!--  using a checkbox normally with the event handler  -->
+            </Frame>
+            <Label
+                Margin="10"
+                Text="Do you agree to the terms and condition?"
+                TextColor="red" />
+            <CheckBox
+                x:Name="TermsCheckBox"
+                CheckedChanged="TermsCheckBox_CheckedChanged"
+                Color="green" />
+            <Label x:Name="StatusLabel" />
+
+            <!--  using data binding for the checked box and observable property  -->
+            <StackLayout Padding="10">
+                <Label
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="CheckBox Example" />
+
+                <CheckBox IsChecked="{Binding IsChecked}" />
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="{Binding Status}" />
+            </StackLayout>
+
+            <!--  using a datepicker  -->
+            <StackLayout Padding="10">
+                <Label FontSize="Large" Text="Select a date:" />
+                <DatePicker
+                    Date="{Binding SelectedDate}"
+                    MaximumDate="10/10/2024"
+                    MinimumDate="01/01/2024" />
+                <Label
+                    BackgroundColor="blue"
+                    FontSize="Medium"
+                    Text="{Binding SelectedDate, StringFormat='Selected Date: {0:D}'}"
+                    TextColor="white" />
+
+            </StackLayout>
+            <!--  using a slider  -->
+            <Frame BorderColor="Pink">
+                <StackLayout>
+                    <Label x:Name="RotatingLabel" Text="Select a value:" />
+                    <Slider
+                        Maximum="360"
+                        Minimum="0"
+                        ValueChanged="Slider_ValueChanged" />
+                    <Label x:Name="DisplayLabel" Text="(uninitialized)" />
+                </StackLayout>
+            </Frame>
+
+            <!--  using a stepper  -->
+            <Frame BorderColor="Pink">
+                <StackLayout>
+                    <Label x:Name="RotatingLabels" Text="Select a value:" />
+                    <Stepper
+                        Increment="30"
+                        Maximum="360"
+                        ValueChanged="Stepper_ValueChanged" />
+                    <Label x:Name="DisplayLabels" Text="(uninitialized)" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

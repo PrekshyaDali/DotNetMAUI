@@ -7,6 +7,5 @@ public partial class UIPracticePage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = new FairyTaleViewModel();
-	
 	}
 }
