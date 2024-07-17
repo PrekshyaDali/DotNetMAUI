@@ -9,14 +9,11 @@ using System.Threading.Tasks;
 namespace MauiApp1.ViewModels
 {
     internal partial class PresentDataDemoPageViewModel : ObservableObject
-
-
     {
         [ObservableProperty]
         private bool isChecked;
         [ObservableProperty]
         private string? status;
-        //using the observableproperty will automatically have its field name in capital although declared as lowecase
         [ObservableProperty]
         private DateTime selectedDate;
 
@@ -30,6 +27,5 @@ namespace MauiApp1.ViewModels
         partial void OnIsCheckedChanged(bool value) {
             Status = value ? "Checked" : "Not Checked";
         }
-   
     }
 }

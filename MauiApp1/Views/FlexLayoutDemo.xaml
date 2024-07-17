@@ -6,8 +6,6 @@
     Title="Flex Layout Demo">
     <!--  stretch is the default value for align items  -->
     <FlexLayout AlignContent="Center" Direction="Column">
-        <!--<Button Text="Flex Button1" FlexLayout.Grow="1" BackgroundColor="LightBlue" />
-        <Button Text="Flex Button2" FlexLayout.Basis="Auto" FlexLayout.Order="-1"/>-->
         <Label
             Padding="20"
             BackgroundColor="DarkRed"
@@ -16,7 +14,6 @@
             HorizontalTextAlignment="Center"
             Text="Welcome to Dotnet MAUI Prekshya"
             TextColor="White" />
-
         <FlexLayout Direction="Row" FlexLayout.Grow="1">
             <VerticalStackLayout BackgroundColor="MediumPurple" FlexLayout.Basis="50" />
             <VerticalStackLayout BackgroundColor="Aqua" FlexLayout.Grow="1" />
@@ -32,4 +29,3 @@
             TextColor="white" />
     </FlexLayout>
 </ContentPage>
-    

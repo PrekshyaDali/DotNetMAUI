@@ -41,6 +41,5 @@ namespace MauiApp1.Pages
             Navigation.PushAsync(new BindableLayoutDemo());
 
         }
-
     }
 }

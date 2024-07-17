@@ -113,14 +113,16 @@
             Text="Recommended For you"
             TextColor="White"
             VerticalOptions="Center" />
-        <CollectionView Grid.Row="5" ItemsLayout="HorizontalList"  ItemsSource="{Binding FairyTales2}">
-            <!--for this comment part I can use the ItemsLayout attribute and assign Horizontal List to get the same result-->
-            <!--<CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="25" Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>-->
+        <CollectionView
+            Grid.Row="5"
+            ItemsLayout="HorizontalList"
+            ItemsSource="{Binding FairyTales2}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid HeightRequest="200" WidthRequest="200" Margin="0,0,10,0">
+                    <Grid
+                        Margin="0,0,10,0"
+                        HeightRequest="200"
+                        WidthRequest="200">
                         <Border
                             HeightRequest="200"
                             HorizontalOptions="Center"

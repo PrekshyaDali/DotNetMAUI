@@ -12,18 +12,6 @@
             Text="This is home content page"
             VerticalOptions="CenterAndExpand" />
     </ContentPage>
-
-    <!--<NavigationPage Title="About">
-        <x:Arguments>
-            <ContentPage Title="About">
-                <Label Text="This is about content page"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand" />
-                <pages:StackLayoutDemo />
-            </ContentPage>
-        </x:Arguments>
-    </NavigationPage>-->
-
     <ContentPage Title="Contact us">
         <Label
             HorizontalOptions="CenterAndExpand"

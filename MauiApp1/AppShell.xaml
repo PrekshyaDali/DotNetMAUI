@@ -61,6 +61,9 @@
     <FlyoutItem Title="Display Collection" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:DisplayCollectionDemoPage}" Route="DisplayCollectionDemoPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Custom Entry Control" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:CustomEntryControl}" Route="CustomEntryControl" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>

@@ -9,7 +9,5 @@ namespace MauiApp1.Pages
         {
             InitializeComponent();
         }
-
-        
     }
 }

@@ -17,9 +17,6 @@ public partial class PresentDataDemoPage : ContentPage
 		{
 			StatusLabel.Text = "You have not agreed , please agreee";
 		}
-
-
-
     }
 
     private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -29,7 +26,6 @@ public partial class PresentDataDemoPage : ContentPage
 		DisplayLabel.Text = String.Format("The slider Value is {0)", value);
 
     }
-
 
     private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
     {

@@ -9,6 +9,4 @@ public partial class PersonalDetailInformationPage : ContentPage
 		InitializeComponent();
 		BindingContext = new PersonalInformationViewModel();
 	}
-
-    
 }
