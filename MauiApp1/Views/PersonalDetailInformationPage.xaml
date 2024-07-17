@@ -106,8 +106,8 @@
 
             <Button Command="{Binding SubmitCommand}" Text="Submit" />
 
-            <!--collection view to list the inputted form details-->
-            <CollectionView ItemsSource="{Binding PersonalInformation}" Margin="0,0,0,20">
+            <!--  collection view to list the inputted form details  -->
+            <CollectionView Margin="0,0,0,20" ItemsSource="{Binding PersonalInformation}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame HasShadow="True">
@@ -127,7 +127,12 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <ActivityIndicator
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsSubmitting}"
+                IsVisible="{Binding IsSubmitting}"
+                VerticalOptions="Center" />
         </StackLayout>
-
     </ScrollView>
 </ContentPage>
+    

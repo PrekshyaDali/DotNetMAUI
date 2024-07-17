@@ -18,19 +18,23 @@ namespace MauiApp1.ViewModels
 
         [ObservableProperty]
         private PersonalInformation info = new();
+        [ObservableProperty]
+        private bool isSubmitting;
         public PersonalInformationViewModel()
         {
             info = new PersonalInformation();
         }
 
         [RelayCommand]
-        private void Submit()
+        private async Task Submit()
         {
             if (Info != null)
             {
+                IsSubmitting = true;
+                await Task.Delay(2000);
                 PersonalInformation.Add(Info);
-              
-           Info = new PersonalInformation();
+                Info = new PersonalInformation();
+                IsSubmitting= false;
             }
         }
     }
