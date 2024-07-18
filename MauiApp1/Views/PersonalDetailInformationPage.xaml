@@ -172,7 +172,6 @@
                         <TimePicker Time="{Binding Info.OfficeEndHours}" />
                     </Frame>
                 </VerticalStackLayout>
-
             </StackLayout>
 
             <!--  for terms and condition  -->

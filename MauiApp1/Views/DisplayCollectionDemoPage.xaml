@@ -6,7 +6,6 @@
     Title="Display Collection Demo Page">
 
     <StackLayout>
-
         <Picker x:Name="picker" Title="Select a monkey">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -33,6 +32,5 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-
     </StackLayout>
 </ContentPage>
