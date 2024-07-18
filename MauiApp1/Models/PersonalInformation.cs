@@ -10,8 +10,6 @@ namespace MauiApp1.Models
     internal class PersonalInformation
     {
 
-        //[Display (Name = "firstname", Prompt ="firstname")]
-        //[Required (AllowEmptyStrings =false, ErrorMessage ="First name should not be empty")]
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }

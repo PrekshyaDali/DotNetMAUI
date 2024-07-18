@@ -11,14 +11,20 @@
         <vm:PersonalInformationViewModel />
     </ContentPage.BindingContext>
     <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-            <Label
-                Margin="0,10,0,0"
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalOptions="Center"
-                Text="Personal Information"
-                TextColor="DarkBlue" />
+        <StackLayout
+            x:Name="MainLayout"
+            Padding="20"
+            Spacing="15">
+            <HorizontalStackLayout Spacing="80">
+                <Label
+                    Margin="0,10,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="Personal Information"
+                    TextColor="DarkBlue" />
+                <Switch Toggled="Switch_Toggled" />
+            </HorizontalStackLayout>
 
             <!--  this is the outer layer  -->
             <StackLayout Orientation="Horizontal" Spacing="10">
@@ -83,7 +89,6 @@
 
             <!--  for date of birth  -->
             <VerticalStackLayout>
-
                 <Label Text="Date of Birth" />
                 <Frame Padding="4">
                     <DatePicker Date="{Binding Info.DateOfBirth}" />

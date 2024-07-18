@@ -9,4 +9,19 @@ public partial class PersonalDetailInformationPage : ContentPage
 		InitializeComponent();
 		BindingContext = new PersonalInformationViewModel();
 	}
+
+    private void Switch_Toggled(object sender, ToggledEventArgs e)
+    {
+        bool isDarkMode = e.Value;
+        if (isDarkMode)
+        {
+            Application.Current.UserAppTheme = AppTheme.Dark;
+
+        }
+        else
+        {
+            Application.Current.UserAppTheme = AppTheme.Light;
+        }
+
+    }
 }

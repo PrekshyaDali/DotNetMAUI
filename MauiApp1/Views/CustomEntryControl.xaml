@@ -6,7 +6,7 @@
     Title="CustomEntryControl">
     <StackLayout>
         <Grid Margin="20">
-            <Border></Border>
+            <Border />
             <Entry />
         </Grid>
     </StackLayout>
