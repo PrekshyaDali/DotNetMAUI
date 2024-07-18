@@ -31,7 +31,6 @@ namespace MauiApp1
             Microsoft.Maui.Handlers.DatePickerHandler.Mapper.AppendToMapping(nameof(DatePicker), (handler, view) =>
             {
 #if ANDROID
-                // Customize Android-specific properties here
                 handler.PlatformView.BackgroundTintList= Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 #endif
             });
@@ -39,7 +38,6 @@ namespace MauiApp1
             Microsoft.Maui.Handlers.TimePickerHandler.Mapper.AppendToMapping(nameof(TimePicker), (handler, view) =>
             {
 #if ANDROID
-                // Customize Android-specific properties here
                 handler.PlatformView.BackgroundTintList= Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 #endif
             });
