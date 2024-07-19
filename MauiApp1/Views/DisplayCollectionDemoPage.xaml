@@ -3,34 +3,68 @@
     x:Class="MauiApp1.Views.DisplayCollectionDemoPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MauiApp1.Views"
     Title="Display Collection Demo Page">
 
-    <StackLayout>
-        <Picker x:Name="picker" Title="Select a monkey">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Baboon</x:String>
-                    <x:String>Capuchin Monkey</x:String>
-                    <x:String>Blue Monkey</x:String>
-                    <x:String>Squirrel Monkey</x:String>
-                    <x:String>Golden Lion Tamarin</x:String>
-                    <x:String>Howler Monkey</x:String>
-                    <x:String>Japanese Macaque</x:String>
-                    <x:String>Japanese haksfksfhksdfkjsaque</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+    <ScrollView>
+        <StackLayout>
+            <Picker x:Name="picker" Title="Select a monkey">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                        <x:String>Japanese haksfksfhksdfkjsaque</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-        <TableView Intent="Menu">
-            <TableRoot>
-                <TableSection Title="Chapters">
-                    <TextCell Detail="Learn about .NET MAUI and what it provides." Text="1. Introduction to .NET MAUI" />
-                    <TextCell Detail="Learn about the visual elements in .NET MAUI" Text="2. Anatomy of an app" />
-                    <TextCell Detail="Learn about the .NET MAUI controls that display text." Text="3. Text" />
-                    <TextCell Detail="Learn how to size .NET MAUI controls on screen." Text="4. Dealing with sizes" />
-                    <TextCell Detail="Learn more about creating your UI in XAML." Text="5. XAML vs code" />
-                </TableSection>
-            </TableRoot>
-        </TableView>
-    </StackLayout>
+            <TableView Margin="0" Intent="Menu">
+                <TableRoot>
+                    <TableSection Title="Chapters">
+                        <TextCell Detail="Learn about .NET MAUI and what it provides." Text="1. Introduction to .NET MAUI" />
+                        <TextCell Detail="Learn about the visual elements in .NET MAUI" Text="2. Anatomy of an app" />
+                        <TextCell Detail="Learn about the .NET MAUI controls that display text." Text="3. Text" />
+                        <TextCell Detail="Learn how to size .NET MAUI controls on screen." Text="4. Dealing with sizes" />
+                        <TextCell Detail="Learn more about creating your UI in XAML." Text="5. XAML vs code" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <ScrollView Orientation="Horizontal">
+                <StackLayout
+                    Padding="20"
+                    Orientation="Horizontal"
+                    Spacing="50">
+                    <controls:CardView
+                        Grid.Column="0"
+                        CardTitle="Rapunzel"
+                        Description="A ContentView-derived class can be created using the ContentView item template in Visual Studio. This template creates a XAML file in which the UI for the custom control can be defined, and a code-behind file in which any control properties, events, and other logic can be defined."
+                        ProfileImageSource="Fairies/rapunzel.png " />
+
+                    <controls:CardView
+                        Grid.Column="0"
+                        CardTitle="Cindrella"
+                        Description="A ContentView-derived class can be created using the ContentView item template in Visual Studio. This template creates a XAML file in which the UI for the custom control can be defined, and a code-behind file in which any control properties, events, and other logic can be defined."
+                        ProfileImageSource="Fairies/cindrella.png " />
+
+                    <controls:CardView
+                        Grid.Column="0"
+                        CardTitle="Snow white"
+                        Description="A ContentView-derived class can be created using the ContentView item template in Visual Studio. This template creates a XAML file in which the UI for the custom control can be defined, and a code-behind file in which any control properties, events, and other logic can be defined."
+                        ProfileImageSource="Fairies/snowwhite.png " />
+
+                    <controls:CardView
+                        Grid.Column="0"
+                        CardTitle="Tinkerbell"
+                        Description="A ContentView-derived class can be created using the ContentView item template in Visual Studio. This template creates a XAML file in which the UI for the custom control can be defined, and a code-behind file in which any control properties, events, and other logic can be defined."
+                        ProfileImageSource="Fairies/tinkerbell.png " />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

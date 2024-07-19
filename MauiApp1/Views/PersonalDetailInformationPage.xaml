@@ -22,7 +22,7 @@
                     FontSize="Large"
                     HorizontalOptions="Center"
                     Text="Personal Information"
-                    TextColor="DarkBlue" />
+                    TextColor="LightBlue" />
                 <Switch Toggled="Switch_Toggled" />
             </HorizontalStackLayout>
 
@@ -90,7 +90,7 @@
             <!--  for date of birth  -->
             <VerticalStackLayout>
                 <Label Text="Date of Birth" />
-                <Frame Padding="4">
+                <Frame Padding="4" HasShadow="True" BorderColor="LightBlue">
                     <DatePicker Date="{Binding Info.DateOfBirth}" />
                 </Frame>
             </VerticalStackLayout>
@@ -98,7 +98,7 @@
             <!--  for multiple checkbox  -->
             <VerticalStackLayout Spacing="8">
                 <Label Text="Select your interest for the position" />
-                <Frame BorderColor="LightBlue" HasShadow="True">
+                <Frame BorderColor="LightBlue" HasShadow="True" >
                     <StackLayout>
 
                         <Grid ColumnDefinitions="Auto, *">
@@ -143,7 +143,7 @@
             <!--  for address  -->
             <VerticalStackLayout>
                 <Label Text="Address" />
-                <Frame Padding="4" BorderColor="LightBlue">
+                <Frame Padding="4" BorderColor="LightBlue" HasShadow="True">
                     <Entry Placeholder="Address" Text="{Binding Info.Address}" />
                 </Frame>
             </VerticalStackLayout>
@@ -185,7 +185,9 @@
             <Button
                 BackgroundColor="DarkBlue"
                 Command="{Binding SubmitCommand}"
-                Text="Submit" />
+                Text="Submit" 
+                TextColor="white"
+                />
 
             <!--  collection view to list the inputted form details  -->
             <CollectionView Margin="0,0,0,20" ItemsSource="{Binding PersonalInformation}">

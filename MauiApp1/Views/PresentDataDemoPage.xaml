@@ -88,8 +88,7 @@
                     <Image Source="Fairies/cindrella.jpg" />
                 </StackLayout>
 
-
-                <!--  using a checkbox normally with the event handler  -->
+             <!--  using a checkbox normally with the event handler  -->
             </Frame>
             <Label
                 Margin="10"
@@ -127,7 +126,6 @@
                     FontSize="Medium"
                     Text="{Binding SelectedDate, StringFormat='Selected Date: {0:D}'}"
                     TextColor="white" />
-
             </StackLayout>
             <!--  using a slider  -->
             <Frame BorderColor="Pink">
