@@ -5,9 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CustomEntryControl">
     <StackLayout>
-        <Grid Margin="20">
-            <Border />
-            <Entry />
-        </Grid>
+
+        <Entry x:Name="FirstName" Text="Prekshya" />
+        <Entry Text="{Binding Source={x:Reference FirstName}, Path=Text, Mode=OneWay}" />
     </StackLayout>
 </ContentPage>

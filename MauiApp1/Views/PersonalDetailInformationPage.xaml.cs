@@ -12,8 +12,7 @@ public partial class PersonalDetailInformationPage : ContentPage
 
     private void Switch_Toggled(object sender, ToggledEventArgs e)
     {
-        bool isDarkMode = e.Value;
-        if (isDarkMode)
+        if (e.Value)
         {
             Application.Current.UserAppTheme = AppTheme.Dark;
 

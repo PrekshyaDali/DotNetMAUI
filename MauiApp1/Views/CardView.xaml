@@ -34,7 +34,5 @@
                 Text="{Binding Description}"
                 TextColor="LightBlue" />
         </StackLayout>
-
     </Border>
-
 </ContentView>
