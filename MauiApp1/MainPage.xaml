@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.MainPage">
+<ContentPage
+    x:Class="MauiApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <StackLayout Padding="50"  HorizontalOptions="Center" >
-        <Image Margin="50" Source="bajralogo.png"></Image>
-        <Label FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Red" LineHeight="1.5">Welcome to ShowCase of Prekshya's MAUI Practise</Label>
+    <StackLayout Padding="50" HorizontalOptions="Center">
+        <Image Margin="50" Source="bajralogo.png" />
+        <Label
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalTextAlignment="Center"
+            LineHeight="1.5"
+            TextColor="Red">
+            Welcome to ShowCase of Prekshya's MAUI Practise
+        </Label>
     </StackLayout>
 </ContentPage>
