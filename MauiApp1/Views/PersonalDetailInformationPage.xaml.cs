@@ -21,6 +21,5 @@ public partial class PersonalDetailInformationPage : ContentPage
         {
             Application.Current.UserAppTheme = AppTheme.Light;
         }
-
     }
 }

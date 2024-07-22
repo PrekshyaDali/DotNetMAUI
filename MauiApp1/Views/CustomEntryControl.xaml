@@ -3,10 +3,67 @@
     x:Class="MauiApp1.Views.CustomEntryControl"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="CustomEntryControl">
-    <StackLayout>
+    xmlns:local="clr-namespace:MauiApp1.Models"
+    xmlns:viewModels="clr-namespace:MauiApp1.ViewModels"
+    Title="Binding Value Converters">
 
-        <Entry x:Name="FirstName" Text="Prekshya" />
-        <Entry Text="{Binding Source={x:Reference FirstName}, Path=Text, Mode=OneWay}" />
+    <ContentPage.BindingContext>
+        <viewModels:PersonViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <local:Converters x:Key="floatToBool" />
+        <ResourceDictionary>
+            <Color x:Key="ThemeColor">#3498db</Color>
+            <x:String x:Key="populationUnknown">Population size unknown hello hello</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <StackLayout>
+            <Entry x:Name="FirstName" Text="Prekshya" />
+            <Entry Text="{Binding Source={x:Reference FirstName}, Path=Text, Mode=OneWay}" />
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Red" />
+            <Slider
+                x:Name="Red"
+                Maximum="255"
+                Minimum="0"
+                ThumbColor="red" />
+            <Entry BindingContext="{x:Reference Name=Red}" Text="{Binding Path=Value, Converter={StaticResource floatToInt}, Mode=TwoWay}" />
+        </StackLayout>
+        <!--  binding to the self mean it will take the property within itself  -->
+        <BoxView
+            HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}"
+            WidthRequest="100"
+            Color="red" />
+
+        <!--  targetnullvalue property allows a replacement value to be defiend when the binding is resolved but the value is null  -->
+        <ListView ItemsSource="{Binding People}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Name, TargetNullValue='Name not provided'}" Text="{Binding Age}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <BoxView
+            BackgroundColor="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=Resources[ThemeColor]}"
+            HeightRequest="100"
+            WidthRequest="100" />
+
+        <!--  fallbacks are used when binding is not resolved  -->
+        <Label Text="{Binding Population, FallbackValue={StaticResource populationUnknown}}" />
+        <Button Clicked="Button_Clicked" Text="Navigate to command binding" />
+
+        <!--  for radio button  -->
+        <StackLayout>
+            <RadioButton
+                CheckedChanged="RadioButton_CheckedChanged_2"
+                Content="Option 1"
+                GroupName="Group1" />
+            <RadioButton
+                CheckedChanged="RadioButton_CheckedChanged_1"
+                Content="Option 2"
+                GroupName="Group1" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

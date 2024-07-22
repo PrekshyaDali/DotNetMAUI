@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.CommandDemoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:MauiApp1.ViewModels"
+    Title="CommandDemoPage">
+    <ContentPage.BindingContext>
+        <viewModels:CommandDemoViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <!--  using icommand>  -->
+        <StackLayout>
+            <Button Command="{Binding AddCompanyDetailsCommand}" Text="Add Company" />
+            <ListView ItemsSource="{Binding Company}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding CompanyAge}" Text="{Binding CompanyName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

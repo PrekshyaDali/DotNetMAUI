@@ -97,6 +97,9 @@
 	  <MauiXaml Update="Views\CardView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\CommandDemoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CustomEntryControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
