@@ -66,6 +66,7 @@
         <Button Text="Save">
             <Button.Triggers>
                 <MultiTrigger TargetType="Button">
+                    <!--  multi-triggers allows to perform actions based on multiple conditions being met simultaneously  -->
                     <MultiTrigger.Conditions>
                         <BindingCondition Binding="{Binding Source={x:Reference phone}, Path=Text.Length}" Value="0" />
                         <BindingCondition Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0" />
@@ -93,19 +94,23 @@
             </Entry>
         </StackLayout>
 
-        <!--<Entry Placeholder="Enter job title">
-            <Entry.Triggers>
-                <Trigger TargetType="Entry" Property="Entry.IsFocused" Value="True">
-                    <Trigger.EnterActions>
-                        <local:ChangeColorAction StartsFrom="0" />
-                    </Trigger.EnterActions>
+        <!--  enter and exit triggers  -->
+        <StackLayout Padding="20">
+            <Entry Placeholder="Enter job title">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Trigger.EnterActions>
+                            <local:ChangeColorAction FocusedBackgroundColor="Green" FocusedTextColor="red" />
+                        </Trigger.EnterActions>
+                    </Trigger>
 
-                    <Trigger.ExitActions>
-                        <local:ChangeColorAction StartsFrom="1" />
-                    </Trigger.ExitActions>
-                </Trigger>
-            </Entry.Triggers>
-        </Entry>-->
-
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="False">
+                        <Trigger.EnterActions>
+                            <local:ChangeColorAction UnfocusedBackgroundColor="White" UnfocusedTextColor="Black" />
+                        </Trigger.EnterActions>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
