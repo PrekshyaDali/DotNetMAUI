@@ -3,9 +3,14 @@
     x:Class="MauiApp1.Views.UIPracticePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiApp1.ViewModels"
     Title="UIPracticePage">
 
-    <Grid BackgroundColor="#0D0118" RowDefinitions=".05*, .1*, .45*, .05*, .05*, .3*">
+    <ContentPage.BindingContext>
+        <vm:FairyTaleViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid BackgroundColor="#0D0118" RowDefinitions=".05*, .1*, .45*, .05*, .05*, .2*, .1*">
         <Label
             Grid.Row="0"
             FontSize="16"
@@ -24,17 +29,18 @@
                 CancelButtonColor="white"
                 Placeholder="Search by name"
                 PlaceholderColor="#AC9DB9"
+                SearchCommand="{Binding SearchCommand}"
+                Text="{Binding SearchText}"
+                TextChanged="SearchBar_TextChanged"
                 TextColor="white"
                 VerticalOptions="Center" />
         </Grid>
 
-        <!--  peakareainsets allows us to see another part of another elements  -->
         <CarouselView
             Grid.Row="2"
             IndicatorView="IndicatorView"
             ItemsSource="{Binding FairyTales1}"
             PeekAreaInsets="30">
-            <!--  mandatory single will allow the user not scroll quickly  -->
             <CarouselView.ItemsLayout>
                 <LinearItemsLayout
                     ItemSpacing="0"
@@ -69,7 +75,6 @@
                                             <GradientStop Offset="1" Color="#030005" />
                                         </LinearGradientBrush>
                                     </RoundRectangle.Fill>
-
                                 </RoundRectangle>
                                 <VerticalStackLayout Grid.Row="2" Margin="20,0,0,0">
                                     <Label Text="{Binding ReadTime, StringFormat='Read Time: {0:%m} mins'}" TextColor="White" />
@@ -136,5 +141,62 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <!--  Adding a ScrollView for filtered fairy tales  -->
+        <ScrollView Grid.Row="2" Margin="25,10,25,10">
+            <StackLayout Padding="10" Spacing="10">
+                <Label
+                    FontAttributes="Bold"
+                    IsVisible="{Binding IsFilteredFairyTales1Visible}"
+                    Text="Filtered Fairy Tales 1"
+                    TextColor="white" />
+                <CollectionView IsVisible="{Binding IsFilteredFairyTales1Visible}" ItemsSource="{Binding FilteredFairyTales1}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="50"
+                                    Source="{Binding Image}"
+                                    WidthRequest="50" />
+                                <Label
+                                    Text="{Binding Name}"
+                                    TextColor="white"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Text="{Binding ReadTime, StringFormat='Read Time: {0:%m} mins'}"
+                                    TextColor="white"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label
+                    FontAttributes="Bold"
+                    IsVisible="{Binding IsFilteredFairyTales1Visible}"
+                    Text="Filtered Fairy Tales 2"
+                    TextColor="white" />
+                <CollectionView IsVisible="{Binding IsFilteredFairyTales2Visible}" ItemsSource="{Binding FilteredFairyTales2}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="50"
+                                    Source="{Binding Image}"
+                                    WidthRequest="50" />
+                                <Label
+                                    Text="{Binding Name}"
+                                    TextColor="white"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Text="{Binding ReadTime, StringFormat='Read Time: {0:%m} mins'}"
+                                    TextColor="white"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

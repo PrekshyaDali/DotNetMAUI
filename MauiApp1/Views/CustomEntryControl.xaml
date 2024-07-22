@@ -56,14 +56,8 @@
 
         <!--  for radio button  -->
         <StackLayout>
-            <RadioButton
-                CheckedChanged="RadioButton_CheckedChanged_2"
-                Content="Option 1"
-                GroupName="Group1" />
-            <RadioButton
-                CheckedChanged="RadioButton_CheckedChanged_1"
-                Content="Option 2"
-                GroupName="Group1" />
+            <RadioButton Content="Option 1" GroupName="Group1" />
+            <RadioButton Content="Option 2" GroupName="Group1" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
