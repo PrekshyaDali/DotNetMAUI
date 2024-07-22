@@ -64,6 +64,9 @@
     <FlyoutItem Title="Custom Entry Control" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:CustomEntryControl}" Route="CustomEntryControl" />
     </FlyoutItem>
+    <FlyoutItem Title="Trigger" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:TriggerDemoPage}" Route="TriggerDemoPage" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>
