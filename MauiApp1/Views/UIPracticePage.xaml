@@ -10,7 +10,7 @@
         <vm:FairyTaleViewModel />
     </ContentPage.BindingContext>
 
-    <Grid BackgroundColor="#0D0118" RowDefinitions=".05*, .1*, .45*, .05*, .05*, .2*, .1*">
+    <Grid BackgroundColor="#0D0118" RowDefinitions=".05*, .1*, .45*, .05*, .05*, .3*">
         <Label
             Grid.Row="0"
             FontSize="16"
@@ -31,7 +31,6 @@
                 PlaceholderColor="#AC9DB9"
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding SearchText}"
-                TextChanged="SearchBar_TextChanged"
                 TextColor="white"
                 VerticalOptions="Center" />
         </Grid>

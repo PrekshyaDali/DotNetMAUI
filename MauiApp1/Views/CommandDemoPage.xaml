@@ -8,8 +8,9 @@
     <ContentPage.BindingContext>
         <viewModels:CommandDemoViewModel />
     </ContentPage.BindingContext>
+
     <StackLayout>
-        <!--  using icommand>  -->
+        <!--  Using ICommand  -->
         <StackLayout>
             <Button Command="{Binding AddCompanyDetailsCommand}" Text="Add Company" />
             <ListView ItemsSource="{Binding Company}">
@@ -20,5 +21,90 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem
+                        BackgroundColor="LightGreen"
+                        IconImageSource="favorite.png"
+                        Text="Favorite" />
+                    <SwipeItem
+                        BackgroundColor="LightPink"
+                        IconImageSource="delete.png"
+                        Text="Delete" />
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <!--  Content  -->
+            <Grid
+                BackgroundColor="LightGray"
+                HeightRequest="60"
+                WidthRequest="300">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Swipe right"
+                    VerticalOptions="Center" />
+            </Grid>
+        </SwipeView>
+
+
+        <!--  using trigger for the validation of empty fields  -->
+        <VerticalStackLayout Padding="15" Spacing="15">
+            <Frame BorderColor="blue">
+                <Entry
+                    x:Name="phone"
+                    Placeholder="Phone"
+                    Text="" />
+            </Frame>
+            <Label
+                x:Name="PhoneError"
+                IsVisible="False"
+                Text="Phone number is required"
+                TextColor="red">
+                <Label.Triggers>
+                    <!--  Trigger for Phone Entry  -->
+                    <DataTrigger
+                        Binding="{Binding Source={x:Reference phone}, Path=Text.Length}"
+                        TargetType="Label"
+                        Value="0">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <Frame BorderColor="blue">
+                <Entry
+                    x:Name="email"
+                    Placeholder="email"
+                    Text="" />
+            </Frame>
+            <Label
+                x:Name="EmailError"
+                IsVisible="False"
+                Text="Email is required"
+                TextColor="red">
+                <Label.Triggers>
+                    <!--  Trigger for Email Entry  -->
+                    <DataTrigger
+                        Binding="{Binding Source={x:Reference email}, Path=Text.Length}"
+                        TargetType="Label"
+                        Value="0">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <Button Text="Save">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference phone}, Path=Text.Length}" Value="0" />
+                            <BindingCondition Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="False" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+        </VerticalStackLayout>
     </StackLayout>
 </ContentPage>

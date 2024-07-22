@@ -10,17 +10,4 @@ public partial class UIPracticePage : ContentPage
 		InitializeComponent();
 		BindingContext = new FairyTaleViewModel();
 	}
-
-    private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
-    {
-        if (string.IsNullOrEmpty(e.NewTextValue))
-        {
-            // Call the CancelCommand in ViewModel
-            if (BindingContext is FairyTaleViewModel viewModel)
-            {
-                viewModel.OnCancel();
-            }
-        }
-
-    }
 }
