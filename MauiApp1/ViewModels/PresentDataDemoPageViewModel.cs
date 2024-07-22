@@ -23,7 +23,6 @@ namespace MauiApp1.ViewModels
             Status = "Not checked";
             SelectedDate = DateTime.Now;
         }
-
         partial void OnIsCheckedChanged(bool value) {
             Status = value ? "Checked" : "Not Checked";
         }

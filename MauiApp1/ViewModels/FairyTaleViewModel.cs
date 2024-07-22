@@ -5,11 +5,14 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using MauiApp1.Models;
 
 namespace MauiApp1.ViewModels
 {
-    class FairyTaleViewModel
+     partial class FairyTaleViewModel
     {
         public ObservableCollection<FairyTale> FairyTales1 { get; set; }
         public ObservableCollection<FairyTale> FairyTales2 { get; set; }
@@ -31,6 +34,7 @@ namespace MauiApp1.ViewModels
         new FairyTale { Name = "Cinderella", ReadTime = TimeSpan.FromMinutes(20), Image = "Fairies/cindrella.jpg" },
         
     };
+
         }
     }
 }

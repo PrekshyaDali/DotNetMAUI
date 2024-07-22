@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MauiApp1.Models;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
+using System.Windows.Input;
 
 namespace MauiApp1.ViewModels
 {
@@ -20,9 +21,31 @@ namespace MauiApp1.ViewModels
         private PersonalInformation info = new();
         [ObservableProperty]
         private bool isSubmitting;
+        public bool isRefreshing;
+        public ICommand RefreshCommand { get; }
         public PersonalInformationViewModel()
         {
             info = new PersonalInformation();
+            RefreshCommand = new AsyncRelayCommand(onRefresh);
+        }
+
+        public async Task onRefresh()
+        {
+            await Task.Delay(1000);
+            ClearPersonalInformation();
+            isRefreshing = false;
+        }
+
+        private void ClearPersonalInformation()
+        {
+            Info.FirstName = string.Empty;
+            Info.LastName = string.Empty;
+            Info.Email = string.Empty;
+            Info.ContactNumber = 0; 
+            Info.DateOfBirth = DateTime.Now; 
+            Info.Address = string.Empty;
+            Info.OfficeStartHours = TimeSpan.Zero; 
+            Info.OfficeEndHours = TimeSpan.Zero; 
         }
 
         [RelayCommand]

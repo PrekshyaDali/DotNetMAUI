@@ -16,7 +16,7 @@ namespace MauiApp1.ViewModels
         {
             People = new ObservableCollection<Person>
             {
-               new Person { Name = "Prekshya Dali", Age = 20 },
+               new Person { Name = null, Age = 20 },
                new Person {Name = "Bitisha Maharjan", Age = 19},
                new Person {Name = "Suyan HeroHeralal", Age = 78}
             };
