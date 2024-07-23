@@ -133,6 +133,9 @@
 	  <MauiXaml Update="Views\UIPracticePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ValidationPageDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\VerticalStackLayoutDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

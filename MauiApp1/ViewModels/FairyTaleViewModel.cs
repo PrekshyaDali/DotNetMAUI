@@ -54,7 +54,6 @@ namespace MauiApp1.ViewModels
 
         }
 
-
         private void OnSearch()
         {
   

@@ -67,6 +67,9 @@
     <FlyoutItem Title="Trigger" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:TriggerDemoPage}" Route="TriggerDemoPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Validation" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:ValidationPageDemo}" Route="ValidationPageDemo" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>
