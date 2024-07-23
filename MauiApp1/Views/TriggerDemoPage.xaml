@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1.Models"
     Title="TriggerDemoPage">
+
     <!--  using trigger for the validation of empty fields  -->
     <VerticalStackLayout Padding="15" Spacing="15">
-
         <!--  using property trigger  -->
         <Entry Placeholder="Enter name">
             <Entry.Triggers>
@@ -94,7 +94,7 @@
             </Entry>
         </StackLayout>
 
-        <!--  enter and exit triggers  -->
+        <!--  enter triggers  -->
         <StackLayout Padding="20">
             <Entry Placeholder="Enter job title">
                 <Entry.Triggers>
@@ -112,5 +112,31 @@
                 </Entry.Triggers>
             </Entry>
         </StackLayout>
+
+        <!--  using state trigger  -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveStates">
+                <!--  Narrow State  -->
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="LightBlue" />
+                        <Setter TargetName="layout" Property="StackLayout.Orientation" Value="Vertical" />
+                    </VisualState.Setters>
+                </VisualState>
+                <!--  Wide State for windows  -->
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="LightGreen" />
+                        <Setter TargetName="layout" Property="StackLayout.Orientation" Value="Horizontal" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </VerticalStackLayout>
 </ContentPage>
