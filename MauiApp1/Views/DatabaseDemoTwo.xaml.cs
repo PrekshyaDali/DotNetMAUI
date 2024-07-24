@@ -7,8 +7,7 @@ public partial class DatabaseDemoTwo : ContentPage
     public DatabaseDemoTwo()
 	{
 		InitializeComponent();
-        _personRepo = App.PersonRepo; // Dependency injection
-
+        _personRepo = App.PersonRepo; 
         LoadPeople();
     }
 
@@ -30,8 +29,8 @@ public partial class DatabaseDemoTwo : ContentPage
 
     private void OnGetAllPeopleClicked(object sender, EventArgs e)
     {
-        LoadPeople(); 
-
+        LoadPeople();
+    }
     private void LoadPeople()
     {
         try

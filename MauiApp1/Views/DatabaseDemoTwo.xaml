@@ -3,15 +3,13 @@
     x:Class="MauiApp1.Views.DatabaseDemoTwo"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1.Models"
     Title="DatabaseDemoTwo">
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="PersonTemplate">
                 <ViewCell>
-                    <Label
-                        
-                        Padding="5"
-                        Text="{Binding Name}" />
+                    <Label Padding="5" Text="{Binding Name}" />
                 </ViewCell>
             </DataTemplate>
         </ResourceDictionary>
@@ -32,17 +30,33 @@
             BackgroundColor="LightBlue"
             Clicked="OnAddPersonClicked"
             Text="Add Person"
-            TextColor="White" />
+            TextColor="White">
+            <Button.Triggers>
+                <EventTrigger Event="Clicked">
+                    <EventTrigger.Actions>
+                        <local:DisplayAlert />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
 
         <!--  Button to Get All People  -->
         <Button
             BackgroundColor="LightGreen"
             Clicked="OnGetAllPeopleClicked"
             Text="Get All People"
-            TextColor="White" />
+            TextColor="White">
+            <Button.Triggers>
+                <EventTrigger Event="Clicked">
+                    <EventTrigger.Actions>
+                        <local:DisplayAlert />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
 
         <!--  ListView to Display People  -->
-        <ListView
+        <ListView 
             x:Name="PeopleListView"
             HasUnevenRows="True"
             ItemTemplate="{StaticResource PersonTemplate}" />
@@ -54,8 +68,5 @@
             HorizontalOptions="Center"
             TextColor="Red"
             VerticalOptions="EndAndExpand" />
-
     </StackLayout>
-
-
 </ContentPage>
