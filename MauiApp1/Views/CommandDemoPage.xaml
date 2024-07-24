@@ -8,8 +8,9 @@
     <ContentPage.BindingContext>
         <viewModels:CommandDemoViewModel />
     </ContentPage.BindingContext>
+
     <StackLayout>
-        <!--  using icommand>  -->
+        <!--  Using ICommand  -->
         <StackLayout>
             <Button Command="{Binding AddCompanyDetailsCommand}" Text="Add Company" />
             <ListView ItemsSource="{Binding Company}">
@@ -20,5 +21,30 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem
+                        BackgroundColor="LightGreen"
+                        IconImageSource="favorite.png"
+                        Text="Favorite" />
+                    <SwipeItem
+                        BackgroundColor="LightPink"
+                        IconImageSource="delete.png"
+                        Text="Delete" />
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <!--  Content  -->
+            <Grid
+                BackgroundColor="LightGray"
+                HeightRequest="60"
+                WidthRequest="300">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Swipe right"
+                    VerticalOptions="Center" />
+            </Grid>
+        </SwipeView>
     </StackLayout>
 </ContentPage>

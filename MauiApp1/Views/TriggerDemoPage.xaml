@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.TriggerDemoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1.Models"
+    Title="TriggerDemoPage">
+
+    <!--  using trigger for the validation of empty fields  -->
+    <VerticalStackLayout Padding="15" Spacing="15">
+        <!--  using property trigger  -->
+        <Entry Placeholder="Enter name">
+            <Entry.Triggers>
+                <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="Yellow" />
+                    <!--  Multiple Setter elements are allowed  -->
+                </Trigger>
+            </Entry.Triggers>
+        </Entry>
+
+        <!--  using data trigger  -->
+        <Frame BorderColor="blue">
+            <Entry
+                x:Name="phone"
+                Placeholder="Phone"
+                Text="" />
+        </Frame>
+        <Label
+            x:Name="PhoneError"
+            IsVisible="False"
+            Text="Phone number is required"
+            TextColor="red">
+            <Label.Triggers>
+                <!--  Trigger for Phone Entry  -->
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference phone}, Path=Text.Length}"
+                    TargetType="Label"
+                    Value="0">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Frame BorderColor="blue">
+            <Entry
+                x:Name="email"
+                Placeholder="email"
+                Text="" />
+        </Frame>
+        <Label
+            x:Name="EmailError"
+            IsVisible="False"
+            Text="Email is required"
+            TextColor="red">
+            <Label.Triggers>
+                <!--  Trigger for Email Entry  -->
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference email}, Path=Text.Length}"
+                    TargetType="Label"
+                    Value="0">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Button Text="Save">
+            <Button.Triggers>
+                <MultiTrigger TargetType="Button">
+                    <!--  multi-triggers allows to perform actions based on multiple conditions being met simultaneously  -->
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Source={x:Reference phone}, Path=Text.Length}" Value="0" />
+                        <BindingCondition Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiTrigger>
+                <EventTrigger Event="Clicked">
+                    <EventTrigger.Actions>
+                        <local:DisplayAlert />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <!--  event triggers  -->
+        <StackLayout Padding="20">
+            <Entry Placeholder="Enter your name">
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <EventTrigger.Actions>
+                            <local:ChangeColorAction />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+        </StackLayout>
+
+        <!--  enter triggers  -->
+        <StackLayout Padding="20">
+            <Entry Placeholder="Enter job title">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Trigger.EnterActions>
+                            <local:ChangeColorAction FocusedBackgroundColor="Green" FocusedTextColor="red" />
+                        </Trigger.EnterActions>
+                    </Trigger>
+
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="False">
+                        <Trigger.EnterActions>
+                            <local:ChangeColorAction UnfocusedBackgroundColor="White" UnfocusedTextColor="Black" />
+                        </Trigger.EnterActions>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+        </StackLayout>
+
+        <!--  using state trigger  -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveStates">
+                <!--  Narrow State  -->
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="LightBlue" />
+                        <Setter TargetName="layout" Property="StackLayout.Orientation" Value="Vertical" />
+                    </VisualState.Setters>
+                </VisualState>
+                <!--  Wide State for windows  -->
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="LightGreen" />
+                        <Setter TargetName="layout" Property="StackLayout.Orientation" Value="Horizontal" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </VerticalStackLayout>
+</ContentPage>

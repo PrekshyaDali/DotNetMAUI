@@ -12,10 +12,23 @@ using MauiApp1.Models;
 
 namespace MauiApp1.ViewModels
 {
-     partial class FairyTaleViewModel
+     partial class FairyTaleViewModel: ObservableObject
     {
         public ObservableCollection<FairyTale> FairyTales1 { get; set; }
         public ObservableCollection<FairyTale> FairyTales2 { get; set; }
+
+        public ObservableCollection<FairyTale> FilteredFairyTales1 { get; set; }
+        public ObservableCollection<FairyTale> FilteredFairyTales2 { get; set; }
+
+        [ObservableProperty]
+        public bool isFilteredFairyTales1Visible;
+        [ObservableProperty]
+        public bool isFilteredFairyTales2Visible;
+
+        public ICommand SearchCommand { get; }
+
+        [ObservableProperty]
+        public string searchText;
 
         public FairyTaleViewModel()
         {
@@ -35,6 +48,39 @@ namespace MauiApp1.ViewModels
         
     };
 
+            FilteredFairyTales1 = new ObservableCollection<FairyTale>(FairyTales1);
+            FilteredFairyTales2 = new ObservableCollection<FairyTale>(FairyTales2);
+            SearchCommand = new RelayCommand(OnSearch);
+
+        }
+
+        private void OnSearch()
+        {
+  
+            var filtered1 = FairyTales1.Where(f => f.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase)).ToList();
+            var filtered2 = FairyTales2.Where(f => f.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            FilteredFairyTales1.Clear();
+            FilteredFairyTales2.Clear();
+
+            foreach (var fairyTale in filtered1)
+            {
+                FilteredFairyTales1.Add(fairyTale);
+            }
+
+            foreach (var fairyTale in filtered2)
+            {
+                FilteredFairyTales2.Add(fairyTale);
+            }
+            IsFilteredFairyTales1Visible = FilteredFairyTales1.Any();
+            IsFilteredFairyTales2Visible = FilteredFairyTales2.Any();
+        }
+
+        public void OnCancel()
+        {
+            SearchText = string.Empty;
+            FilteredFairyTales1 = new ObservableCollection<FairyTale>(FairyTales1);
+            FilteredFairyTales2 = new ObservableCollection<FairyTale>(FairyTales2);
         }
     }
 }
