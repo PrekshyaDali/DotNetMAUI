@@ -4,12 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Datatype="[Datatype ]vm:PersonalInformationViewModel"
+    xmlns:converter="clr-namespace:MauiApp1.Models"
     xmlns:vm="clr-namespace:MauiApp1.ViewModels"
     Title="Personal Detail">
 
     <ContentPage.BindingContext>
         <vm:PersonalInformationViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:EmailValidationConverter x:Key="EmailValidationConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
             <StackLayout
@@ -67,10 +73,17 @@
                         HasShadow="True"
                         VerticalOptions="CenterAndExpand">
                         <Entry
+                            x:Name="EmailEntry"
                             Placeholder="Email"
                             Text="{Binding Info.Email}"
+    
+                           
                             VerticalOptions="Center" />
                     </Frame>
+                    <Label
+                        IsVisible="{Binding Source={x:Reference EmailEntry}, Path=Text, Converter={StaticResource EmailValidationConverter}}"
+                        Text="Invalid Email"
+                        TextColor="Red" />
                 </VerticalStackLayout>
 
                 <!--  for contact number  -->
