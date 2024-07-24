@@ -19,12 +19,9 @@
             <converter:EmailValidationConverter x:Key="EmailValidationConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ContentPage.BindingContext>
-        <local:ValidationViewModel />
-    </ContentPage.BindingContext>
+
 
     <StackLayout Padding="20">
-
         <Border>
             <Entry x:Name="Name">
                 <!--  we have another flags such as validateonunfocused  -->
@@ -87,34 +84,6 @@
             IsVisible="{Binding Source={x:Reference EmailEntry}, Path=Text, Converter={StaticResource EmailValidationConverter}}"
             Text="This email is not valid"
             TextColor="red" />
-
-
-        <!--<StackLayout Padding="20">
-            <Entry x:Name="EmailEntryTwo" Placeholder="Enter email">
-                <Entry.Triggers>
-        -->
-        <!--  Event Trigger for Focused event  -->
-        <!--
-                    <EventTrigger Event="Focused">
-                        <Validate:ValidateEmailAction InvalidEmailLabel="{Binding Source={x:Reference InvalidEmailLabel}}" />
-                    </EventTrigger>
-        -->
-        <!--  Event Trigger for Unfocused event  -->
-        <!--
-                    <EventTrigger Event="Unfocused">
-                        <Validate:ValidateEmailAction InvalidEmailLabel="{Binding Source={x:Reference InvalidEmailLabel}}" />
-                    </EventTrigger>
-                </Entry.Triggers>
-            </Entry>
-
-            <Label
-                x:Name="InvalidEmailLabel"
-                IsVisible="False"
-                Text="Invalid Email"
-                TextColor="Red" />
-        </StackLayout>-->
-
-
 
         <!--  this is using event trigger  -->
         <StackLayout Padding="20">

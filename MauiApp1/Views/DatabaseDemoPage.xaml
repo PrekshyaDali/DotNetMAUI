@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.DatabaseDemoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="DatabaseDemoPage">
+    <VerticalStackLayout Spacing="10">
+        <Frame>
+            <Entry x:Name="NameEntryField" Placeholder="Enter Name" />
+        </Frame>
+
+        <Frame>
+            <Entry x:Name="AgeEntryField" Placeholder="Enter Age" />
+        </Frame>
+
+        <Button Clicked="Button_Clicked" Text="Save" />
+
+        <ListView x:Name="listView" ItemTapped="listView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding PersonName}" />
+                            <Label Text="{Binding PersonAge}" />
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

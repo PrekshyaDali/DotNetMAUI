@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.DatabaseDemoTwo"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="DatabaseDemoTwo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="PersonTemplate">
+                <ViewCell>
+                    <Label
+                        
+                        Padding="5"
+                        Text="{Binding Name}" />
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Padding="10" Spacing="10">
+
+        <!--  Entry for Name  -->
+        <Label HorizontalOptions="Start" Text="Name:" />
+        <Frame>
+            <Entry
+                x:Name="NameEntry"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Enter name" />
+        </Frame>
+
+        <!--  Button to Add Person  -->
+        <Button
+            BackgroundColor="LightBlue"
+            Clicked="OnAddPersonClicked"
+            Text="Add Person"
+            TextColor="White" />
+
+        <!--  Button to Get All People  -->
+        <Button
+            BackgroundColor="LightGreen"
+            Clicked="OnGetAllPeopleClicked"
+            Text="Get All People"
+            TextColor="White" />
+
+        <!--  ListView to Display People  -->
+        <ListView
+            x:Name="PeopleListView"
+            HasUnevenRows="True"
+            ItemTemplate="{StaticResource PersonTemplate}" />
+
+        <!--  Label for Status Messages  -->
+        <Label
+            x:Name="StatusLabel"
+            FontSize="18"
+            HorizontalOptions="Center"
+            TextColor="Red"
+            VerticalOptions="EndAndExpand" />
+
+    </StackLayout>
+
+
+</ContentPage>
