@@ -73,9 +73,6 @@
     <FlyoutItem Title="File" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:FileHandlingDemoPage}" Route="FileHandlingDemoPage" />
     </FlyoutItem>
-    <FlyoutItem Title="Database" Icon="about.png">
-        <ShellContent ContentTemplate="{DataTemplate pagesOne:DatabaseDemoPage}" Route="DatabaseDemoPage" />
-    </FlyoutItem>
     <FlyoutItem Title="DatabaseTwo" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:DatabaseDemoTwo}" Route="DatabaseDemoTwo" />
     </FlyoutItem>

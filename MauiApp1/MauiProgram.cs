@@ -2,8 +2,6 @@
 using Android.Content.Res;
 using CommunityToolkit.Maui;
 using MauiApp1.Models;
-using static Android.Net.Http.SslCertificate;
-using Android.App.People;
 
 namespace MauiApp1
 {
@@ -22,7 +20,6 @@ namespace MauiApp1
                     fonts.AddFont("Epilogue.ttf", "Epilogue");
                 })
             .UseMauiMaps();
-            builder.Services.AddSingleton<LocalDbServices>();
 
             string dbPath = Path.Combine(FileSystem.AppDataDirectory, "people.db3");
             builder.Services.AddSingleton<PersonRepository>(s => ActivatorUtilities.CreateInstance<PersonRepository>(s, dbPath));

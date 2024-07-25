@@ -27,4 +27,3 @@ namespace MauiApp1.Models
         }
     }
 }
-

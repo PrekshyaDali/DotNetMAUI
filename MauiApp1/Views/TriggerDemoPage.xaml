@@ -7,7 +7,10 @@
     Title="TriggerDemoPage">
 
     <!--  using trigger for the validation of empty fields  -->
-    <VerticalStackLayout Padding="15" Spacing="15">
+    <VerticalStackLayout
+        x:Name="layout"
+        Padding="15"
+        Spacing="15">
         <!--  using property trigger  -->
         <Entry Placeholder="Enter name">
             <Entry.Triggers>

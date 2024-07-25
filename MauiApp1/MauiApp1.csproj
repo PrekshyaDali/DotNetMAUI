@@ -102,9 +102,6 @@
     <MauiXaml Update="Views\CustomEntryControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Views\DatabaseDemoPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
     <MauiXaml Update="Views\DatabaseDemoTwo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

@@ -4,6 +4,7 @@ namespace MauiApp1.Views;
 public partial class DatabaseDemoTwo : ContentPage
 {
     private PersonRepository _personRepo;
+    private PersonRepository _selectedPerson;
     public DatabaseDemoTwo()
 	{
 		InitializeComponent();
@@ -42,5 +43,10 @@ public partial class DatabaseDemoTwo : ContentPage
         {
             StatusLabel.Text = $"Failed to retrieve data. {ex.Message}";
         }
+    }
+
+    private void PeopleListView_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        //inprogress
     }
 }
