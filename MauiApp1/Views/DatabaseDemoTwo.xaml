@@ -9,60 +9,73 @@
         <ResourceDictionary>
             <DataTemplate x:Key="PersonTemplate">
                 <ViewCell>
-                    <VerticalStackLayout>
-                        <Label Padding="5" Text="{Binding Name}" />
+                    <VerticalStackLayout Spacing="15" VerticalOptions="FillAndExpand">
+                        <Frame Margin="0,0,0,15" BorderColor="BlueViolet">
+                            <Label
+                                Padding="5"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding Name}"
+                                TextTransform="Uppercase" />
+                        </Frame>
                     </VerticalStackLayout>
                 </ViewCell>
             </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout Padding="10" Spacing="10">
 
-        <!--  Entry for Name  -->
-        <Label HorizontalOptions="Start" Text="Name:" />
-        <Frame>
-            <Entry
-                x:Name="NameEntry"
-                HorizontalOptions="FillAndExpand"
-                Placeholder="Enter name" />
-        </Frame>
+    <Grid Padding="10" RowDefinitions="auto, *, auto">
+        <StackLayout Grid.Row="0" Spacing="10">
+            <!--  Entry for Name  -->
+            <Label HorizontalOptions="Start" Text="Name:" />
+            <Frame>
+                <Entry
+                    x:Name="NameEntry"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter name" />
+            </Frame>
 
-        <!--  Button to Add Person  -->
-        <Button
-            x:Name="AddEditPersonButton"
-            BackgroundColor="LightBlue"
-            Clicked="OnAddPersonClicked"
-            Text="Add Person"
-            TextColor="White">
-            <Button.Triggers>
-                <EventTrigger Event="Clicked">
-                    <EventTrigger.Actions>
-                        <local:DisplayAlert />
-                    </EventTrigger.Actions>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
+            <!--  Button to Add Person  -->
+            <Button
+                x:Name="AddEditPersonButton"
+                BackgroundColor="LightBlue"
+                Clicked="OnAddPersonClicked"
+                Text="Add Person"
+                TextColor="White">
+                <Button.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <EventTrigger.Actions>
+                            <local:DisplayAlert />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
 
-        <!--  Button to Get All People  -->
-        <Button
-            BackgroundColor="LightGreen"
-            Clicked="OnGetAllPeopleClicked"
-            Text="Get All People"
-            TextColor="White" />
+            <!--  Button to Get All People  -->
+            <Button
+                BackgroundColor="LightGreen"
+                Clicked="OnGetAllPeopleClicked"
+                Text="Get All People"
+                TextColor="White" />
+        </StackLayout>
 
         <!--  ListView to Display People  -->
         <ListView
             x:Name="PeopleListView"
+            Grid.Row="1"
             HasUnevenRows="True"
             ItemTapped="PeopleListView_ItemTapped"
-            ItemTemplate="{StaticResource PersonTemplate}" />
+            ItemTemplate="{StaticResource PersonTemplate}"
+            VerticalOptions="FillAndExpand" />
 
         <!--  Label for Status Messages  -->
-        <Label
-            x:Name="StatusLabel"
-            FontSize="18"
-            HorizontalOptions="Center"
-            TextColor="Red"
-            VerticalOptions="EndAndExpand" />
-    </StackLayout>
+        <Border Grid.Row="2">
+            <Label
+                x:Name="StatusLabel"
+                FontSize="18"
+                HorizontalOptions="Center"
+                TextColor="Red"
+                VerticalOptions="EndAndExpand" />
+        </Border>
+    </Grid>
 </ContentPage>
