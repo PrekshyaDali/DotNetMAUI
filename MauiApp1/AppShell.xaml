@@ -76,6 +76,9 @@
     <FlyoutItem Title="DatabaseTwo" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:DatabaseDemoTwo}" Route="DatabaseDemoTwo" />
     </FlyoutItem>
+    <FlyoutItem Title="TodoDemoPage" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:TodoDemoPage}" Route="TodoDemoPage" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>

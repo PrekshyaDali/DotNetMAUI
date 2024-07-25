@@ -4,7 +4,8 @@ namespace MauiApp1.Views;
 public partial class DatabaseDemoTwo : ContentPage
 {
     private PersonRepository _personRepo;
-    private PersonRepository _selectedPerson;
+    private string _editPersonName = null; 
+  
     public DatabaseDemoTwo()
 	{
 		InitializeComponent();
@@ -18,9 +19,27 @@ public partial class DatabaseDemoTwo : ContentPage
         string name = NameEntry.Text?.Trim();
         if (!string.IsNullOrEmpty(name))
         {
-            _personRepo.AddNewPerson(name);
-            StatusLabel.Text = "Person added!";
-            LoadPeople(); 
+            if (_editPersonName == null)
+            {
+                // Add new person
+                _personRepo.AddNewPerson(name);
+                StatusLabel.Text = "Person added!";
+            }
+            else
+            {
+                // Edit existing person
+                var person = _personRepo.GetPersonByName(_editPersonName);
+                if (person != null)
+                {
+                    person.Name = name;
+                    _personRepo.UpdatePerson(person);
+                    StatusLabel.Text = "Person updated!";
+                    _editPersonName = null;
+                }
+            }
+
+            NameEntry.Text = string.Empty; 
+            LoadPeople();
         }
         else
         {
@@ -45,8 +64,26 @@ public partial class DatabaseDemoTwo : ContentPage
         }
     }
 
-    private void PeopleListView_ItemTapped(object sender, ItemTappedEventArgs e)
+    private async void PeopleListView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         //inprogress
+        if(e.Item is Person person)
+        {
+            var action = await DisplayActionSheet("Action", "Cancel", null, "Edit", "Delete");
+
+            switch (action)
+            {
+                case "Edit":
+                    _editPersonName = person.Name;
+                    NameEntry.Text = person.Name;
+                    AddEditPersonButton.Text = "Edit Person";
+                    break;
+
+                case "Delete":
+                    _personRepo.DeletePerson(person);
+                    LoadPeople();
+                    break;
+            }
+        }
     }
 }

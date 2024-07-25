@@ -9,7 +9,9 @@
         <ResourceDictionary>
             <DataTemplate x:Key="PersonTemplate">
                 <ViewCell>
-                    <Label Padding="5" Text="{Binding Name}" />
+                    <VerticalStackLayout>
+                        <Label Padding="5" Text="{Binding Name}" />
+                    </VerticalStackLayout>
                 </ViewCell>
             </DataTemplate>
         </ResourceDictionary>
@@ -27,6 +29,7 @@
 
         <!--  Button to Add Person  -->
         <Button
+            x:Name="AddEditPersonButton"
             BackgroundColor="LightBlue"
             Clicked="OnAddPersonClicked"
             Text="Add Person"
@@ -45,21 +48,13 @@
             BackgroundColor="LightGreen"
             Clicked="OnGetAllPeopleClicked"
             Text="Get All People"
-            TextColor="White">
-            <Button.Triggers>
-                <EventTrigger Event="Clicked">
-                    <EventTrigger.Actions>
-                        <local:DisplayAlert />
-                    </EventTrigger.Actions>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
+            TextColor="White" />
 
         <!--  ListView to Display People  -->
         <ListView
             x:Name="PeopleListView"
-            ItemTapped="PeopleListView_ItemTapped"
             HasUnevenRows="True"
+            ItemTapped="PeopleListView_ItemTapped"
             ItemTemplate="{StaticResource PersonTemplate}" />
 
         <!--  Label for Status Messages  -->
