@@ -17,6 +17,7 @@ public partial class DatabaseDemoTwo : ContentPage
     private void OnAddPersonClicked(object sender, EventArgs e)
     {
         string name = NameEntry.Text?.Trim();
+       
         if (!string.IsNullOrEmpty(name))
         {
             if (_editPersonName == null)
@@ -35,10 +36,11 @@ public partial class DatabaseDemoTwo : ContentPage
                     _personRepo.UpdatePerson(person);
                     StatusLabel.Text = "Person updated!";
                     _editPersonName = null;
+                    AddEditPersonButton.Text = "Add Person";
                 }
             }
 
-            NameEntry.Text = string.Empty; 
+            NameEntry.Text = string.Empty;
             LoadPeople();
         }
         else
@@ -56,7 +58,18 @@ public partial class DatabaseDemoTwo : ContentPage
         try
         {
             var people = _personRepo.GetAllPeople();
+            PeopleListView.ItemsSource = null;
             PeopleListView.ItemsSource = people;
+
+            // Debugging: Check if people list is correctly fetched
+            if (people != null && people.Count > 0)
+            {
+                StatusLabel.Text = $"Loaded {people.Count} people.";
+            }
+            else
+            {
+                StatusLabel.Text = "No people found.";
+            }
         }
         catch (Exception ex)
         {

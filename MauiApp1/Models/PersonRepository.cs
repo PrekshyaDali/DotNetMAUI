@@ -23,6 +23,7 @@ namespace MauiApp1.Models
                 return;
 
             conn = new SQLiteConnection(_dbPath);
+            conn.DropTable<Person>();
             conn.CreateTable<Person>();
         }
 
@@ -65,6 +66,7 @@ namespace MauiApp1.Models
             {
                 Init();
                 conn.Update(person);
+                
             }
             catch (Exception ex)
             {
