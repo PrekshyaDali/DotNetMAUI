@@ -10,7 +10,7 @@ namespace MauiApp1.Models
     {
         protected override async void Invoke(Button button)
         {
-            await Application.Current.MainPage.DisplayAlert("Hurray", "Congrats you have clicked a button", "OK");
+            await Application.Current.MainPage.DisplayAlert("Hurray", "Congrats you have added one person", "OK");
         }
     }
     }

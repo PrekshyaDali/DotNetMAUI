@@ -7,7 +7,10 @@
     Title="TriggerDemoPage">
 
     <!--  using trigger for the validation of empty fields  -->
-    <VerticalStackLayout Padding="15" Spacing="15">
+    <VerticalStackLayout
+        x:Name="layout"
+        Padding="15"
+        Spacing="15">
         <!--  using property trigger  -->
         <Entry Placeholder="Enter name">
             <Entry.Triggers>
@@ -21,7 +24,7 @@
         <!--  using data trigger  -->
         <Frame BorderColor="blue">
             <Entry
-                x:Name="phone"
+                x:Name="Phone"
                 Placeholder="Phone"
                 Text="" />
         </Frame>
@@ -33,7 +36,7 @@
             <Label.Triggers>
                 <!--  Trigger for Phone Entry  -->
                 <DataTrigger
-                    Binding="{Binding Source={x:Reference phone}, Path=Text.Length}"
+                    Binding="{Binding Source={x:Reference Phone}, Path=Text.Length}"
                     TargetType="Label"
                     Value="0">
                     <Setter Property="IsVisible" Value="True" />
@@ -43,7 +46,7 @@
 
         <Frame BorderColor="blue">
             <Entry
-                x:Name="email"
+                x:Name="Email"
                 Placeholder="email"
                 Text="" />
         </Frame>
@@ -55,7 +58,7 @@
             <Label.Triggers>
                 <!--  Trigger for Email Entry  -->
                 <DataTrigger
-                    Binding="{Binding Source={x:Reference email}, Path=Text.Length}"
+                    Binding="{Binding Source={x:Reference Email}, Path=Text.Length}"
                     TargetType="Label"
                     Value="0">
                     <Setter Property="IsVisible" Value="True" />
@@ -68,8 +71,8 @@
                 <MultiTrigger TargetType="Button">
                     <!--  multi-triggers allows to perform actions based on multiple conditions being met simultaneously  -->
                     <MultiTrigger.Conditions>
-                        <BindingCondition Binding="{Binding Source={x:Reference phone}, Path=Text.Length}" Value="0" />
-                        <BindingCondition Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0" />
+                        <BindingCondition Binding="{Binding Source={x:Reference Phone}, Path=Text.Length}" Value="0" />
+                        <BindingCondition Binding="{Binding Source={x:Reference Email}, Path=Text.Length}" Value="0" />
                     </MultiTrigger.Conditions>
                     <Setter Property="IsEnabled" Value="False" />
                 </MultiTrigger>

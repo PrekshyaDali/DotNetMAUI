@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Android.Content.Res;
 using CommunityToolkit.Maui;
+using MauiApp1.Models;
 
 namespace MauiApp1
 {
@@ -19,7 +20,10 @@ namespace MauiApp1
                     fonts.AddFont("Epilogue.ttf", "Epilogue");
                 })
             .UseMauiMaps();
-             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
+
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "people.db3");
+            builder.Services.AddSingleton<PersonRepository>(s => ActivatorUtilities.CreateInstance<PersonRepository>(s, dbPath));
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
         {
 #if ANDROID
             

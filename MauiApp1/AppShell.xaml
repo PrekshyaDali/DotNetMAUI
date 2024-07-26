@@ -70,6 +70,12 @@
     <FlyoutItem Title="Validation" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:ValidationPageDemo}" Route="ValidationPageDemo" />
     </FlyoutItem>
+    <FlyoutItem Title="File" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:FileHandlingDemoPage}" Route="FileHandlingDemoPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="DatabaseTwo" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:DatabaseDemoTwo}" Route="DatabaseDemoTwo" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>
