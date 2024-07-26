@@ -31,14 +31,14 @@
                     Keyboard="Numeric"
                     Placeholder="Enter your ID" />
             </Frame>
-            <Button Clicked="Button_Clicked" Text="Add Todo Item" />
+            <Button x:Name ="AddButton " Clicked="Button_Clicked" Text="Add Todo Item" />
         </StackLayout>
 
         <Button
             Margin="10"
             Clicked="Button_Clicked_2"
             Text="Fetch Todo Items" />
-        <ListView x:Name="TodoListView" ItemsSource="{Binding TodoItems}">
+        <ListView ItemTapped="TodoListView_ItemTapped"  x:Name="TodoListView" ItemsSource="{Binding TodoItems}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Detail="{Binding title}" Text="{Binding completed}" />

@@ -6,6 +6,7 @@ namespace MauiApp1.Views;
 public partial class TodoDemoPage : ContentPage
 {
     private readonly TodoViewModel _viewModel;
+    private TodoItem _editingItem;
 
     public TodoDemoPage()
     {
@@ -47,5 +48,27 @@ public partial class TodoDemoPage : ContentPage
         CompletedEntryTodo.IsToggled = false;
         UserIDEntryField.Text = string.Empty;
         IdEntryField.Text = string.Empty;
+    }
+
+    private async void TodoListView_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        //inprogress
+        if (e.Item is TodoItem todoItem)
+        {
+            var action = await DisplayActionSheet("Action", "Cancel", null, "Edit", "Delete");
+
+            switch (action)
+            {
+                case "Edit":
+                    _editingItem = todoItem;
+                    NameEntryTodo.Text = todoItem.title;
+                    CompletedEntryTodo.IsToggled = todoItem.completed;
+                    UserIDEntryField.Text = todoItem.userId.ToString();
+                    IdEntryField.Text = todoItem.id.ToString();
+                    AddButton.Text = "Update Todo";
+                    break;
+
+            }
+        }
     }
 }

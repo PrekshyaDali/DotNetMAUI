@@ -68,5 +68,25 @@ namespace MauiApp1.Models
             }
         }
 
+        public async Task UpdateTodoItemAsync(TodoItem item)
+        {
+            var uri = new Uri($"{Constants.RestUrl}/{item.id}");
+            string json = JsonSerializer.Serialize(item, _serializerOptions);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                HttpResponseMessage response = await _client.PutAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Item updated successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ERROR: {ex.Message}");
+            }
+        }
+
     }
 }

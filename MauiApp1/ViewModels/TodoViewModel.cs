@@ -35,5 +35,16 @@ namespace MauiApp1.ViewModels
             TodoItems.Add(item);
            
         }
+
+        public async Task UpdateTodoItem(TodoItem item)
+        {
+            await _restService.UpdateTodoItemAsync(item);
+            var existingItem = TodoItems.FirstOrDefault(i => i.id == item.id);
+            if (existingItem != null)
+            {
+                existingItem.title = item.title;
+                existingItem.completed = item.completed;
+            }
+        }
     }
 }

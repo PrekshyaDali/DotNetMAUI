@@ -61,7 +61,6 @@ public partial class DatabaseDemoTwo : ContentPage
             PeopleListView.ItemsSource = null;
             PeopleListView.ItemsSource = people;
 
-            // Debugging: Check if people list is correctly fetched
             if (people != null && people.Count > 0)
             {
                 StatusLabel.Text = $"Loaded {people.Count} people.";
@@ -79,7 +78,6 @@ public partial class DatabaseDemoTwo : ContentPage
 
     private async void PeopleListView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
-        //inprogress
         if(e.Item is Person person)
         {
             var action = await DisplayActionSheet("Action", "Cancel", null, "Edit", "Delete");
