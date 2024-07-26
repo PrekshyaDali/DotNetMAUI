@@ -48,7 +48,7 @@ namespace MauiApp1.Models
         }
 
 
-        public async Task AddTodoItemAsync(TodoItem item)
+        public async Task<bool> AddTodoItemAsync(TodoItem item)
         {
             var uri = new Uri(Constants.RestUrl);
             string json = JsonSerializer.Serialize(item, _serializerOptions);
@@ -60,16 +60,19 @@ namespace MauiApp1.Models
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine("Item added successfully.");
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"ERROR: {ex.Message}");
             }
+            return false;
         }
 
-        public async Task UpdateTodoItemAsync(TodoItem item)
+        public async Task<bool> UpdateTodoItemAsync(TodoItem item)
         {
+
             var uri = new Uri($"{Constants.RestUrl}/{item.id}");
             string json = JsonSerializer.Serialize(item, _serializerOptions);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -80,12 +83,35 @@ namespace MauiApp1.Models
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine("Item updated successfully.");
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"ERROR: {ex.Message}");
             }
+            return false;
+        }
+
+
+        public async Task<bool> DeleteTodoItemAsync(int id)
+        {
+            var uri = new Uri($"{Constants.RestUrl}/{id}");
+
+            try
+            {
+                HttpResponseMessage response = await _client.DeleteAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Item deleted successfully.");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ERROR: {ex.Message}");
+            }
+            return false;
         }
 
     }

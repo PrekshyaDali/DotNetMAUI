@@ -28,6 +28,7 @@ public partial class TodoDemoPage : ContentPage
         var completed = CompletedEntryTodo.IsToggled;
         var userId = Convert.ToInt16(UserIDEntryField.Text);
         var id = Convert.ToInt16(IdEntryField.Text);
+
         var newItem = new TodoItem
         {
             title = title,
@@ -36,14 +37,44 @@ public partial class TodoDemoPage : ContentPage
             id = id,
         };
 
-        await _viewModel.AddTodoItem(newItem);
+        bool isSuccess;
+
+        if (_editingItem == null)
+        {
+            // Adding a new Todo item
+            isSuccess = await _viewModel.AddTodoItem(newItem);
+            if (isSuccess)
+            {
+                await DisplayAlert("Success", "Todo item added successfully.", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Failed", "Failed to add Todo item.", "OK");
+            }
+        }
+        else
+        {
+            newItem.id = _editingItem.id; 
+            isSuccess = await _viewModel.UpdateTodoItem(newItem);
+            if (isSuccess)
+            {
+                await DisplayAlert("Success", "Todo item updated successfully.", "OK");
+                AddButton.Text = "Add Todo";
+
+            }
+            else
+            {
+                await DisplayAlert("Failed", "Failed to update Todo item.", "OK");
+            }
+            _editingItem = null; 
+        }
+
+        // Reload data and update the UI
         await _viewModel.LoadData();
         TodoListView.ItemsSource = _viewModel.TodoItems;
         TodoListView.IsVisible = true;
 
-        await DisplayAlert("Success", "You have added a new Todo item.", "OK");
-
-        // Clearing the entry fields
+        // Clear the entry fields
         NameEntryTodo.Text = string.Empty;
         CompletedEntryTodo.IsToggled = false;
         UserIDEntryField.Text = string.Empty;
@@ -66,6 +97,21 @@ public partial class TodoDemoPage : ContentPage
                     UserIDEntryField.Text = todoItem.userId.ToString();
                     IdEntryField.Text = todoItem.id.ToString();
                     AddButton.Text = "Update Todo";
+                    break;
+
+
+                case "Delete":
+                  bool isSuccess = await _viewModel.DeleteTodoItem(todoItem.id);
+                    if (isSuccess)
+                    {
+                        await DisplayAlert("Success", "Todo Item Deleted successfully.", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Failed", "Todo Item Deletion failed.", "OK");
+                    }
+                    await _viewModel.LoadData();
+                    TodoListView.ItemsSource= _viewModel.TodoItems;
                     break;
 
             }
