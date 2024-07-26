@@ -8,7 +8,7 @@
 
     <!--  using trigger for the validation of empty fields  -->
     <VerticalStackLayout
-        x:Name="layout"
+        x:Name="Layout"
         Padding="15"
         Spacing="15">
         <!--  using property trigger  -->

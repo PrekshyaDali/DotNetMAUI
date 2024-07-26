@@ -23,6 +23,7 @@ namespace MauiApp1.Models
                 return;
 
             conn = new SQLiteConnection(_dbPath);
+            conn.DropTable<Person>();
             conn.CreateTable<Person>();
         }
 
@@ -57,6 +58,47 @@ namespace MauiApp1.Models
             }
 
             return new List<Person>();
+        }
+
+        public void UpdatePerson(Person person)
+        {
+            try
+            {
+                Init();
+                conn.Update(person);
+                
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Failed to update person. Error: {ex.Message}";
+            }
+        }
+
+        public void DeletePerson(Person person)
+        {
+            try
+            {
+                Init();
+                conn.Delete(person);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Failed to delete person. Error: {ex.Message}";
+            }
+        }
+
+        public Person GetPersonByName(string name)
+        {
+            try
+            {
+                Init();
+                return conn.Table<Person>().FirstOrDefault(p => p.Name == name);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Failed to retrieve person. {ex.Message}";
+                return null;
+            }
         }
 
         public string StatusMessage { get; private set; }

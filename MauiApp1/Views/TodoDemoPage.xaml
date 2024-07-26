@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.TodoDemoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1.ViewModels"
+    Title="TodoDemoPage">
+    <ContentPage.BindingContext>
+        <local:TodoViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout Padding="10">
+        <StackLayout Orientation="Vertical" Spacing="10">
+            <Frame>
+                <HorizontalStackLayout HeightRequest="50">
+                    <Entry
+                        x:Name="NameEntryTodo"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Enter Todo Name" />
+                    <Switch
+                        x:Name="CompletedEntryTodo"
+                        HorizontalOptions="End"
+                        IsToggled="False" />
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame>
+                <Entry x:Name="UserIDEntryField" Placeholder="Enter your userID" Keyboard="Numeric"/>
+            </Frame>
+            <Frame>
+                <Entry
+                    x:Name="IdEntryField"
+                    Keyboard="Numeric"
+                    Placeholder="Enter your ID" />
+            </Frame>
+            <Button x:Name ="AddButton " Clicked="Button_Clicked" Text="Add Todo Item" />
+        </StackLayout>
+
+        <Button
+            Margin="10"
+            Clicked="Button_Clicked_2"
+            Text="Fetch Todo Items" />
+        <ListView ItemTapped="TodoListView_ItemTapped"  x:Name="TodoListView" ItemsSource="{Binding TodoItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding title}" Text="{Binding completed}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+
