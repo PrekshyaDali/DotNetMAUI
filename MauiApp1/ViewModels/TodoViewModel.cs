@@ -29,22 +29,44 @@ namespace MauiApp1.ViewModels
             }
         }
 
-        public async Task AddTodoItem(TodoItem item)
+        public async Task<bool> AddTodoItem(TodoItem item)
         {
-            await _restService.AddTodoItemAsync(item);
+            bool isSuccess = await _restService.AddTodoItemAsync(item);
             TodoItems.Add(item);
+            return isSuccess;
            
         }
 
-        public async Task UpdateTodoItem(TodoItem item)
+        public async Task<bool> UpdateTodoItem(TodoItem item)
         {
-            await _restService.UpdateTodoItemAsync(item);
-            var existingItem = TodoItems.FirstOrDefault(i => i.id == item.id);
-            if (existingItem != null)
+            bool isSuccess = await _restService.UpdateTodoItemAsync(item);
+            if (isSuccess)
             {
-                existingItem.title = item.title;
-                existingItem.completed = item.completed;
+                var existingItem = TodoItems.FirstOrDefault(i => i.id == item.id);
+                if (existingItem != null)
+                {
+                    existingItem.title = item.title;
+                    existingItem.completed = item.completed;
+                }
             }
+            return isSuccess;
+            }
+
+        public async Task<bool> DeleteTodoItem(int id)
+        {
+            
+            bool isSuccess = await _restService.DeleteTodoItemAsync(id);
+            if (isSuccess)
+            {
+                var item = TodoItems.FirstOrDefault(i => i.id == id);
+                if (item != null)
+                {
+                    TodoItems.Remove(item);
+                }
+
+            }
+            return isSuccess;
+          
         }
     }
 }

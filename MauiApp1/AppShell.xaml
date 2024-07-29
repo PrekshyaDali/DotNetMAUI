@@ -79,6 +79,12 @@
     <FlyoutItem Title="TodoDemoPage" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:TodoDemoPage}" Route="TodoDemoPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Dependency Injection Page" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:DependencyInjectionPage}" Route="DependencyInjectionPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings Page Page" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:SettingsPage}" Route="SettingsPage" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>

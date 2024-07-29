@@ -2,6 +2,8 @@
 using Android.Content.Res;
 using CommunityToolkit.Maui;
 using MauiApp1.Models;
+using MauiApp1.Views;
+using MauiApp1.ViewModels;
 
 namespace MauiApp1
 {
@@ -23,6 +25,16 @@ namespace MauiApp1
 
             string dbPath = Path.Combine(FileSystem.AppDataDirectory, "people.db3");
             builder.Services.AddSingleton<PersonRepository>(s => ActivatorUtilities.CreateInstance<PersonRepository>(s, dbPath));
+
+            //adding for dependency injection
+            builder.Services.AddSingleton<DependencyInjectionPage>();
+            builder.Services.AddSingleton<DependencyInjectionViewModel>();
+
+            builder.Services.AddSingleton<SettingsViewModel>();
+            builder.Services.AddSingleton<ProfileViewModel>();
+            builder.Services.AddSingleton<UserService>();
+            builder.Services.AddSingleton<ProfilePage>();
+            builder.Services.AddSingleton<SettingsPage>();
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
         {
 #if ANDROID

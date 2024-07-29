@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ProfilePage">
+    <VerticalStackLayout>
+        <Label Text="Username:" />
+        <Entry Text="{Binding UserName}" />
+    </VerticalStackLayout>
+</ContentPage>
