@@ -40,6 +40,5 @@ namespace MauiApp1.Models
         {
             _username = username;
         }
-
     }
 }

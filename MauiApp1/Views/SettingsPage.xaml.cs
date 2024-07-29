@@ -13,7 +13,4 @@ public partial class SettingsPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
     }
-    public ICommand NavigateCommand { get; set; }
-
- 
 }

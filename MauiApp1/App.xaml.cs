@@ -14,16 +14,6 @@ namespace MauiApp1
         public static SettingsPage SettingsPage { get; private set; }
         public static ProfilePage ProfilePage { get; private set; }
 
-        //public App(PersonRepository repo, DependencyInjectionPage _dependencyInjectionDemo)
-        //{
-        //    InitializeComponent();
-
-        //    PersonRepo = repo;
-        //    DependencyInjectionPage = _dependencyInjectionDemo;
-
-        //    MainPage = new AppShell();
-        //}
-
         public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
@@ -34,7 +24,6 @@ namespace MauiApp1
             UserService = serviceProvider.GetRequiredService<UserService>();
             SettingsPage = serviceProvider.GetRequiredService<SettingsPage>();
             ProfilePage = serviceProvider.GetRequiredService<ProfilePage>();
-
             MainPage = new AppShell();
         }
     }
