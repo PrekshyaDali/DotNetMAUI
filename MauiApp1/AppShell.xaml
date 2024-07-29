@@ -85,6 +85,12 @@
     <FlyoutItem Title="Settings Page Page" Icon="about.png">
         <ShellContent ContentTemplate="{DataTemplate pagesOne:SettingsPage}" Route="SettingsPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Essentials in MAUI" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:EssentialsInMaui}" Route="EssentialsInMaui" />
+    </FlyoutItem>
+    <FlyoutItem Title="Pop Up Assignment" Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate pagesOne:OccasionView}" Route="OccasionView" />
+    </FlyoutItem>
 
     <!--  Tab Bar  -->
     <TabBar>

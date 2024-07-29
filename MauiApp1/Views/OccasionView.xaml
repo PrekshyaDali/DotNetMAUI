@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.OccasionView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="OccasionView">
+
+    <VerticalStackLayout>
+        <Label Text=" this is the Assignment pop up view page" />
+        <Button Clicked="OccasionPopUp_Clicked" Text="Occasion Popup" />
+
+        <CollectionView
+            x:Name="OccasionList"
+            Margin="5"
+            SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions=".4*, .3*,.3*"
+                            RowDefinitions="auto, auto">
+
+                            <Label Text="Date" />
+                            <Label Text="Occasion" />
+                            <Label Text="Notes" />
+
+                        </Grid>
+
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="MauiApp1.Views.AssignmentPopUp"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <VerticalStackLayout
+        Padding="20"
+        BackgroundColor="white"
+        MinimumHeightRequest="300"
+        MinimumWidthRequest="250">
+        <VerticalStackLayout>
+            <Label Text="Pick a Date" />
+            <DatePicker x:Name="OccasionDate" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Occasion type" />
+            <Picker x:Name="OccasionType" Title="Select Occasion">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String, System.Private.CoreLib}">
+                        <x:String>Anniversary</x:String>
+                        <x:String>Birthday</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <VerticalStackLayout>
+                <Label Text="Notes" />
+                <Entry x:Name="OccasionNotes" Placeholder="Any wish to wish on the occasion" />
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button
+                    Grid.Column="0"
+                    Clicked="CancelButton_Clicked"
+                    Text="Cancel" />
+                <Button
+                    Grid.Column="1"
+                    Clicked="SaveButton_Clicked"
+                    Text="Save" />
+            </Grid>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</toolkit:Popup>

@@ -88,6 +88,9 @@
     <MauiXaml Update="Views\AbsoluteLayoutDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Views\AssignmentPopUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Views\BindableLayoutDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -115,6 +118,9 @@
     <MauiXaml Update="Views\DisplayCollectionDemoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Views\EssentialsInMaui.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Views\FileHandlingDemoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -125,6 +131,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Views\HorizontalStackLayoutDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\OccasionView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Views\PersonalDetailInformationPage.xaml">
