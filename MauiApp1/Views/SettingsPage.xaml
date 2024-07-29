@@ -10,6 +10,6 @@
             HorizontalOptions="Center"
             Text="Click here to navigate to profile"
             VerticalOptions="Center" />
-        <Button Text="click here" Clicked="Button_Clicked"></Button>
+        <Button Command="{Binding NavigateCommand}" Text="click here" />
     </VerticalStackLayout>
 </ContentPage>

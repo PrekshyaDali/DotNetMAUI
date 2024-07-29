@@ -14,8 +14,16 @@ namespace MauiApp1.ViewModels
 
         public ProfileViewModel(UserService userService)
         {
-            _userService = userService; 
+            _userService = userService;
+            _userService.PropertyChanged += OnUserServicePropertyChanged;
             UserName = _userService.GetUserName();
+        }
+        private void OnUserServicePropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(UserService.UserName))
+            {
+                UserName = _userService.UserName;
+            }
         }
 
         private string _userName;
