@@ -18,8 +18,6 @@ namespace MauiApp1.ViewModels
         private string _userName;
         private readonly IServiceProvider _serviceProvider;
 
-     
-
         public string UserName
         {
             get => _userName;
@@ -62,7 +60,6 @@ namespace MauiApp1.ViewModels
         }
 
         public ICommand NavigateCommand { get; }
-
         private async void NavigateToProfile()
         {
             try

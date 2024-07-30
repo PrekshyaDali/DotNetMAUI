@@ -12,6 +12,6 @@
             Light="Red" />
     </ContentPage.Resources>
     <VerticalStackLayout>
-        <Label TextColor="{toolkit:AppThemeResource LabelTextColor}" Text="Hello prekshya" />
+        <Label Text="Hello prekshya" TextColor="{toolkit:AppThemeResource LabelTextColor}" />
     </VerticalStackLayout>
 </ContentPage>
