@@ -14,16 +14,17 @@
             <DatePicker x:Name="OccasionDate" />
         </VerticalStackLayout>
         <VerticalStackLayout>
-            <Label Text="Occasion type" />
-            <Picker x:Name="OccasionType" Title="Select Occasion">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String, System.Private.CoreLib}">
-                        <x:String>Anniversary</x:String>
-                        <x:String>Birthday</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-
+            <VerticalStackLayout>
+                <Label Text="Occasion type" />
+                <Picker x:Name="OccasionType" Title="Select Occasion">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Anniversary</x:String>
+                            <x:String>Birthday</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
 
             <VerticalStackLayout>
                 <Label Text="Notes" />

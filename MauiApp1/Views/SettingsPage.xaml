@@ -14,7 +14,6 @@
             <Style x:Key="ValidEntryStyle" TargetType="Entry">
                 <Setter Property="TextColor" Value="Green" />
             </Style>
-
             <SolidColorBrush x:Key="TrueColorBrush">Green</SolidColorBrush>
             <SolidColorBrush x:Key="FalseColorBrush">Red</SolidColorBrush>
 
@@ -60,17 +59,11 @@
         <Frame>
             <Entry Background="{Binding IsValid, Converter={StaticResource IsValidConverter}}" />
         </Frame>
-        <Button Text="Toggle IsValid" Clicked="Button_Clicked">
+        <Button Clicked="Button_Clicked" Text="Toggle IsValid">
             <Button.Behaviors>
                 <toolkit:EventToCommandBehavior Command="{Binding MyToggleCommand}" EventName="Clicked" />
             </Button.Behaviors>
         </Button>
-
-        <Button Text="click here for the display prompt" Clicked="Button_Clicked_1"></Button>
-
-        
-        
-
-
+        <Button Clicked="Button_Clicked_1" Text="click here for the display prompt" />
     </VerticalStackLayout>
 </ContentPage>

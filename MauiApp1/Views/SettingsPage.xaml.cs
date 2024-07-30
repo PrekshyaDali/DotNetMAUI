@@ -8,7 +8,6 @@ namespace MauiApp1.Views;
 public partial class SettingsPage : ContentPage
 
 {
-
     private readonly IServiceProvider _serviceProvider;
 	public SettingsPage(SettingsViewModel viewModel)
 	{

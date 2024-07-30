@@ -5,10 +5,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="OccasionView">
 
-    <VerticalStackLayout>
-        <Label Text=" this is the Assignment pop up view page" />
-        <Button Clicked="OccasionPopUp_Clicked" Text="Occasion Popup" />
+    <ContentPage.Resources>
+        <Style x:Key="TextColorStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="LightCoral" />
+        </Style>
+    </ContentPage.Resources>
 
+    <VerticalStackLayout Padding="10">
+        <VerticalStackLayout Spacing="10">
+            <Label
+                FontAttributes="Bold"
+                Style="{StaticResource TextColorStyle}"
+                Text="Celebrations" />
+            <Frame HeightRequest="200">
+                <Image Aspect="AspectFit" Source="bajralogo.png" />
+            </Frame>
+            <Button Clicked="OccasionPopUp_Clicked" Text="Occasion Popup" />
+        </VerticalStackLayout>
+
+        <!--  using collection view to bind the data from the popup  -->
         <CollectionView
             x:Name="OccasionList"
             Margin="5"
@@ -18,24 +33,32 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame>
+                    <Frame Margin="0,0,0,10">
                         <Grid
                             Padding="10"
                             ColumnDefinitions=".4*, .3*,.3*"
-                            RowDefinitions="auto, auto">
-
-                            <Label Text="Date" />
-                            <Label Text="Occasion" />
-                            <Label Text="Notes" />
-
+                            HorizontalOptions="Center"
+                            RowDefinitions="auto, auto"
+                            RowSpacing="20">
+                            <Label
+                                Grid.Column="0"
+                                Style="{StaticResource TextColorStyle}"
+                                Text="{Binding Date, StringFormat='{0:dd MMM yyyy}'}" />
+                            <Label
+                                Grid.Column="1"
+                                Style="{StaticResource TextColorStyle}"
+                                Text="{Binding Occasion}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                HorizontalOptions="FillAndExpand"
+                                Style="{StaticResource TextColorStyle}"
+                                Text="{Binding Notes}" />
                         </Grid>
-
-
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-
         </CollectionView>
     </VerticalStackLayout>
-
 </ContentPage>
