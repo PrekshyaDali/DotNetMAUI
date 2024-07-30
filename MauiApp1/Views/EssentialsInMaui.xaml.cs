@@ -6,4 +6,9 @@ public partial class EssentialsInMaui : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void ThemeSwitch_Toggled(object sender, ToggledEventArgs e)
+    {
+
+    }
 }
