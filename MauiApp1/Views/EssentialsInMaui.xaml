@@ -4,14 +4,41 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    Title="EssentialsInMaui">
+    xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+    Title="EssentialsInMaui"
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:ThemeViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <toolkit:AppThemeColor
             x:Key="LabelTextColor"
             Dark="Green"
             Light="Red" />
     </ContentPage.Resources>
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="15">
         <Label Text="Hello prekshya" TextColor="{toolkit:AppThemeResource LabelTextColor}" />
+        <Label
+            HorizontalOptions="Center"
+            Text="Hello, World!, this is prekshya"
+            TextColor="{DynamicResource PrimaryTextColor}"
+            VerticalOptions="Center" />
+        <VerticalStackLayout>
+            <Label
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                Text="Prekshya"
+                TextColor="{DynamicResource PrimaryTextColor}" />
+            <Label Text="Prekshya" TextColor="{DynamicResource PrimaryTextColor}" />
+            <Label Text="Prekshya" TextColor="{DynamicResource PrimaryTextColor}" />
+            <Label Text="Prekshya" TextColor="{DynamicResource PrimaryTextColor}" />
+        </VerticalStackLayout>
+
+        <Frame>
+            <HorizontalStackLayout>
+                <Label Text="Toggle to change the app Theme" />
+                <Switch x:Name="ThemeSwitch" IsToggled="{Binding IsDarkMode, Mode=TwoWay}" />
+            </HorizontalStackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>
