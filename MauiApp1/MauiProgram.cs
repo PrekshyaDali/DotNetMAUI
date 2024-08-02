@@ -1,9 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using Android.Content.Res;
-using CommunityToolkit.Maui;
+﻿using CommunityToolkit.Maui;
 using MauiApp1.Models;
 using MauiApp1.Views;
 using MauiApp1.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace MauiApp1
 {
@@ -39,7 +38,7 @@ namespace MauiApp1
         {
 #if ANDROID
             
-                handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+                handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 
 #endif
         });
